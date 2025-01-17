@@ -1,8 +1,5 @@
-// Initialize AOS library
-AOS.init();
-
 // Contador regresivo
-const eventDate = new Date("2025-11-22T20:00:00").getTime();
+const eventDate = new Date("2025-12-31T23:59:59").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
