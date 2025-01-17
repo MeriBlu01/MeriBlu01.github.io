@@ -22,3 +22,29 @@ function updateCountdown() {
 }
 
 const timerInterval = setInterval(updateCountdown, 1000);
+
+// Formulario de confirmación
+document.getElementById('confirmationForm').addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  // Capturar datos del formulario
+  const data = {
+      Nombre: document.getElementById('name').value,
+      Asistencia: document.getElementById('attendance').value,
+      Comentarios: document.getElementById('comment').value,
+  };
+
+  // Enviar datos a la API de SheetDB
+  const response = await fetch('https://sheetdb.io/api/v1/78a13sohtmonr', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+  });
+
+  if (response.ok) {
+      alert('¡Gracias por confirmar tu asistencia!');
+      document.getElementById('confirmationForm').reset();
+  } else {
+      alert('Hubo un error al enviar tu confirmación. Por favor, inténtalo de nuevo.');
+  }
+});

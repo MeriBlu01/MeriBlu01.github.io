@@ -54,6 +54,27 @@
       </select>
     </section>
 
+    <!-- Formulario de asistencia -->
+    <h1>Confirmación de Asistencia</h1>
+    <section>
+      <form id="confirmationForm">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+
+        <label for="attendance">¿Asistirás?</label>
+        <select id="attendance" name="attendance" required>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="comment">Comentarios:</label>
+        <textarea id="comment" name="comment" placeholder="Déjanos tus comentarios..."></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+    
+
     <!-- Audio -->
     <section class="audio">
       <h2>Escucha nuestra canción</h2>

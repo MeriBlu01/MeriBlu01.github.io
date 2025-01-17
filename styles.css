@@ -62,3 +62,30 @@ textarea, select {
   margin: 0 10px;
   color: #6c63ff;
 }
+
+form {
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+label, input, select, textarea, button {
+  display: block;
+  width: 90%;
+  margin-bottom: 15px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
