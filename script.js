@@ -48,3 +48,24 @@ document.getElementById('confirmationForm').addEventListener('submit', async (ev
       alert('Hubo un error al enviar tu confirmación. Por favor, inténtalo de nuevo.');
   }
 });
+
+// Inicializar Swiper
+const swiper = new Swiper('.swiper', {
+  // Parameteros opcionales
+  direction: 'vertical',
+  loop: true,
+
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Controladores de Navegacion
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});

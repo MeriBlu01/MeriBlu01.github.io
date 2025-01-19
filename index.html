@@ -4,9 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invitación</title>
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="script.js"></script>
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <!-- Custom Script -->
+  <script defer src="script.js"></script>
 </head>
 <body>
   <div class="container" data-aos="zoom-in">
@@ -24,6 +31,19 @@
         <span id="hours"></span>h :
         <span id="minutes"></span>m :
         <span id="seconds"></span>s
+      </div>
+    </section>
+
+    <!-- Galeria -->
+    <section>
+      <h2>Galería</h2>
+      <div class="swiper-container" effect="cards" grab-cursor="true">
+        <div class="swiper-slide">
+          <img src="assets/wedding-01.jpg" alt="Foto 1">
+        </div>
+        <div class="swiper-slide">
+          <img src="assets/wedding-01.jpg" alt="Foto 2">
+        </div>
       </div>
     </section>
 
