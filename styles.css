@@ -106,3 +106,34 @@ button:hover {
   height: 100%;
   object-fit: cover; /* Ensures the image scales properly */
 }
+
+/* Contenedor de la portada */
+.cover {
+  position: relative;
+  width: 100vw; /* Ancho completo de la pantalla */
+  height: 100vh; /* Alto completo de la pantalla */
+  overflow: hidden;
+}
+
+/* Imagen de portada */
+.cover img {
+  width: 100%; /* Ocupa el ancho completo */
+  height: 100%; /* Ocupa el alto completo */
+  object-fit: cover; /* La imagen se ajusta sin deformarse */
+}
+
+/* Texto superpuesto */
+.cover-text {
+  position: absolute;
+  top: 50%; /* Centrar verticalmente */
+  left: 50%; /* Centrar horizontalmente */
+  transform: translate(-50%, -50%); /* Ajuste para centrar */
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.cover-text h1 {
+  font-size: 2rem;
+}
