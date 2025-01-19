@@ -110,8 +110,9 @@ button:hover {
 /* Contenedor de la portada */
 .cover {
   position: relative;
-  width: 100vw; /* Ancho completo de la pantalla */
-  height: 100vh; /* Alto completo de la pantalla */
+  max-width: 480px;
+  height: 100vh;
+  margin: auto;
   overflow: hidden;
 }
 
