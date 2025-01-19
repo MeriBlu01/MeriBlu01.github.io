@@ -51,9 +51,10 @@ document.getElementById('confirmationForm').addEventListener('submit', async (ev
 
 // Inicializar Swiper
 const swiper = new Swiper('.swiper', {
-  // Parameteros opcionales
-  direction: 'vertical',
-  loop: true,
+  
+  effect: 'cards',
+  grabCursor: true,
+  loop: true, // Enables infinite loop
 
   pagination: {
     el: '.swiper-pagination',
