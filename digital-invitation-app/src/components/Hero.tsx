@@ -1,6 +1,6 @@
-// components/Hero.tsx
 import Image from "next/image";
-import { greatVibes, garamond } from "@/lib/fonts";
+import { tangerine } from "@/lib/fonts";
+import CoverLeafDivider from "@/components/CoverLeafDivider";
 
 export default function Hero() {
   return (
@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background Image */}
       <Image
         src="/cover.png" // image is in /public
-        alt="America y Alonso"
+        alt="cover"
         fill
         className="object-cover brightness-75"
         priority
@@ -17,19 +17,14 @@ export default function Hero() {
       {/* Overlay */}
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
         <h1
-          className={`${greatVibes.className} text-5xl md:text-7xl text-gold drop-shadow-lg`}
+          className={`${tangerine.className} text-7xl md:text-9xl text-gold drop-shadow-lg`}
         >
-          America y Alonso
+          América y Alonso
         </h1>
-        <div className="my-4">
-          <Image
-            src="/cover_leaf_divider.svg"
-            alt="divider"
-            className="mx-auto w-48"
-          />
-        </div>
+        {/* Cover Leaf Divider Section */}
+        <CoverLeafDivider />
         <p
-          className={`${garamond.className} text-lg md:text-xl mt-2 text-gold`}
+          className={`${tangerine.className} text-2xl md:text-3xl mt-2 text-gold`}
         >
           Sábado, 6 de Diciembre 2025
         </p>
