@@ -17,7 +17,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Add more components below like <Location />, <Gallery />, <RSVP /> */}
+      {/* Add more components below */}
     </div>
   );
 }

@@ -15,7 +15,7 @@ export default function Hero() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+      <div className="absolute inset-0 flex flex-col justify-items-center place-items-end justify-center text-center text-white px-4">
         <h1
           className={`${tangerine.className} text-7xl md:text-9xl text-gold drop-shadow-lg`}
         >
