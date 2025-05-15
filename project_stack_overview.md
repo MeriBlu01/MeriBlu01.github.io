@@ -6,6 +6,8 @@
 
 ## Build Tool
 
+- **Next.js**
+
 - **Vite**: v6.2.1
 
 ## Common Application Patterns
