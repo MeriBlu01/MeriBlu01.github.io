@@ -4,6 +4,7 @@
 - **JavaScript & React Formatter**: [Prettier](https://prettier.io)
 
 ## Build Tool
+- **Next.js**
 - **Vite**: v6.2.1
 
 ## Common Application Patterns
