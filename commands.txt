@@ -7,10 +7,28 @@ npm init -y
 
 
 * REACT ------------------------------------
-# Create a React Project
-npx create-react-app.
+# Create a React Project with Next.js framework
+npx create-next-app@latest
+# Install Tailwind and its dependencies
+npm install -D tailwindcss postcss autoprefixer   // The -D flag means it’s a dev dependency.
+# Initialize Tailwind config
+npx tailwindcss init -p // This time was not needed since the postcss.config.mjs file was created
+
+
+
 
 
 * GIT --------------------------------------
+# Check your remote repository connection
+    git remote -v
+# Check the commit history
+    git log --oneline
+
+
+* Vercel -----------------------------------
+# Install Vercel CLI
+    npm install -g vercel
+    npm uninstall -g vercel
+
 
 
