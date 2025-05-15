@@ -33,3 +33,72 @@ such as a Babel, to transform your JSX code into regular JavaScript.
     If you need to update a piece of the UI, you can update the specific component or brick.
 
     In React, components are functions. Inside your <script> tag.
+
+-> Props
+    Regular HTML elements have attributes that you can use to pass pieces 
+    of information that change the behavior of those elements. 
+    For example, changing the src attribute of an <img> element changes the 
+    image that is shown. 
+    Changing the href attribute of an <a> tag changes the destination of the link.
+
+    In the same way, you can pass pieces of information as properties to React components. 
+    These are called 'props'.
+
+    Note: In React, data flows down the component tree. 
+    This is referred to as one-way data flow. 
+
+    Example:
+    function Header({ title }) {
+        return <h1>{title ? title : 'Default title'}</h1>;
+    }
+
+    function HomePage() {
+        return (
+            <div>
+                <Header title="React" />
+                <Header title="A new title" />
+            </div>
+        );
+    }
+
+    or iterating through lists...
+
+    function HomePage() {
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+    
+        return (
+            <div>
+                <Header title="Develop. Preview. Ship." />
+                <ul>
+                    {names.map((name) => (
+                        <li key={name}>{name}</li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
+
+-> state
+    Note: Unlike props which are passed to components as the first function 
+    parameter and are read only, the state is initiated and stored within a component. 
+    You can pass the state information to children components as props, 
+    but the logic for updating the state should be kept within the component 
+    where state was initially created.
+
+    Example:
+
+    function HomePage() {
+        // ...
+        const [likes, setLikes] = React.useState(0);
+        
+        function handleClick() {
+            setLikes(likes + 1);
+        }
+        
+        return (
+            <div>
+                {/* ... */}
+                <button onClick={handleClick}>Likes ({likes})</button>
+            </div>
+        );
+    }
