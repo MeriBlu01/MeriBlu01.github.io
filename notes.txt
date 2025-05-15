@@ -1,0 +1,7 @@
+* Next.js --------------------------------------
+Next.js’ Pages Router es un framework completo de React. 
+Es versátil y te permite crear aplicaciones React de cualquier tamaño, 
+desde un blog mayormente estático hasta una aplicación dinámica compleja. 
+Para crear un nuevo proyecto de Next.js, ejecuta en tu terminal:
+
+-> npx create-next-app@latest

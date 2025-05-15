@@ -1,0 +1,16 @@
+# Validate packages versions
+npm -v (Packages Mgmt)
+node -v (JS)
+
+# Generate a basic package.json file
+npm init -y
+
+
+* REACT ------------------------------------
+# Create a React Project
+npx create-react-app.
+
+
+* GIT --------------------------------------
+
+
