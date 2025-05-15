@@ -6,6 +6,12 @@ Para crear un nuevo proyecto de Next.js, ejecuta en tu terminal:
 
 -> npx create-next-app@latest
 
+-> How does Next.js optimize fonts?
+    Next.js downloads font files at build time and hosts them with your other 
+    static assets. 
+    This means when a user visits your application, there are no additional 
+    network requests for fonts which would impact performance.
+
 
 * DOM ------------------------------------------
 The DOM is an object representation of the HTML elements. 
@@ -102,3 +108,19 @@ such as a Babel, to transform your JSX code into regular JavaScript.
             </div>
         );
     }
+
+
+* CSS Styling ------------------------------------------
+<div
+  className="relative w-0 h-0 border-l-[15px] border-r-[15px] border-b-[26px] border-l-transparent border-r-transparent border-b-black"
+/>
+
+
+* Tailwind ---------------------------------------------
+
+-> Responsive design
+    Prefix a position utility with a breakpoint variant like md: 
+    to only apply the utility at medium screen sizes and above:
+        <div class="relative md:absolute ...">
+            <!-- ... -->
+        </div>
