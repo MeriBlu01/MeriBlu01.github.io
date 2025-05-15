@@ -22,7 +22,7 @@ export default function Hero() {
           America y Alonso
         </h1>
         <div className="my-4">
-          <img
+          <Image
             src="/cover_leaf_divider.svg"
             alt="divider"
             className="mx-auto w-48"

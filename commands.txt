@@ -6,6 +6,7 @@ node -v (JS)
 npm init -y
 
 
+
 * REACT ------------------------------------
 # Create a React Project with Next.js framework
 npx create-next-app@latest
