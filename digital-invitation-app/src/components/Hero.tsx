@@ -4,14 +4,13 @@ import CoverLeafDivider from "@/components/CoverLeafDivider";
 
 export default function Hero() {
   return (
-    <div className="relative w-full max-w-md mx-auto">
+    <div className="relative w-full h-screen max-w-md mx-auto">
       {/* Background Image */}
       <Image
         src="/cover.png"
         alt="cover"
-        layout="responsive"
-        width={375}
-        height={399.65}
+        fill
+        className="object-cover"
         priority
       />
 
