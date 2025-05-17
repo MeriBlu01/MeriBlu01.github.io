@@ -4,13 +4,13 @@ import CoverLeafDivider from "@/components/CoverLeafDivider";
 
 export default function Hero() {
   return (
-    <div className="relative w-full h-screen mx-auto overflow-hidden">
+    <div className="relative w-full min-h-[100svh] md:h-[900px] mx-auto overflow-hidden">
       {/* Background Image */}
       <Image
         src="/cover.png"
         alt="cover"
         fill
-        className="object-cover h-[90vh] sm:object-contain sm:object-[10%_50%] md:object-cover "
+        className="object-cover sm:object-contain sm:object-[10%_50%] md:object-cover "
         priority
       />
 
