@@ -10,7 +10,7 @@ export default function Hero() {
         src="/cover.png"
         alt="cover"
         fill
-        className="object-cover sm:object-contain sm:object-[10%_50%] md:object-cover "
+        className="object-cover h-[90vh] sm:object-contain sm:object-[10%_50%] md:object-cover "
         priority
       />
 
