@@ -10,7 +10,7 @@ export default function Hero() {
         src="/cover.png"
         alt="cover"
         fill
-        className="object-cover"
+        className="object-contain"
         priority
       />
 
