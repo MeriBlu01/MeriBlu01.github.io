@@ -16,7 +16,7 @@ export default function Hero() {
         />
 
         {/* Text Overlay */}
-        <div className="relative items-center">
+        <div className="relative z-[1] items-center">
           <div className="absolute inset-x-0 bottom-0 justify-center text-white px-4 text-center">
             <h1
               className={`${tangerine.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gold drop-shadow-lg`}
