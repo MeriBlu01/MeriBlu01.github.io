@@ -2,11 +2,13 @@
   "name": "digital-invitation-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://MeriBlu01.github.io/wedding-invitation",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "next": "15.3.2",

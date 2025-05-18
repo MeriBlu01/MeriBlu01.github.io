@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/MeriBlu01/wedding-invitation/issues"
   },
-  "homepage": "https://github.com/MeriBlu01/wedding-invitation#readme"
+  "homepage": "https://github.com/MeriBlu01/wedding-invitation#readme",
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
 }
