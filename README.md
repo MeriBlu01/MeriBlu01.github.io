@@ -1,7 +1,5 @@
 # wedding-invitation
 
----
-
 ## Current Deployment Flow
 
 1. **Team commits code to `develop` branch**
