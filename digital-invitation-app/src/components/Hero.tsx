@@ -28,7 +28,7 @@ export default function Hero() {
             <CoverLeafDivider />
           </div>
           <p
-            className={`${tangerine.className} text-xl sm:text-2xl md:text-3xl text-gold`}
+            className={`${tangerine.className} text-2xl sm:text-3xl md:text-4xl text-gold`}
           >
             Sábado, 6 de Diciembre 2025
           </p>
