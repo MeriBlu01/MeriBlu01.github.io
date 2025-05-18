@@ -5,7 +5,7 @@
   "homepage": "https://MeriBlu01.github.io/wedding-invitation",
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "deploy": "gh-pages -d out"
