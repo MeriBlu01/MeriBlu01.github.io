@@ -28,6 +28,11 @@ jobs:
       - name: Build static files
         run: npm run build
 
+      - name: Configure Git AUTH for deployment
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy to GitHub Pages
         run: |
           npm install -g gh-pages
