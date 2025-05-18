@@ -16,9 +16,9 @@ export default function Hero() {
         />
 
         {/* Text Overlay */}
-        <div className="absolute inset-x-0 bottom-0 justify-center text-white px-4 text-center">
+        <div className="absolute inset-x-0 bottom-20 justify-center text-white px-4 text-center">
           <h1
-            className={`${tangerine.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-gold drop-shadow-lg`}
+            className={`${tangerine.className} text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold drop-shadow-lg`}
           >
             América y Alonso
           </h1>
