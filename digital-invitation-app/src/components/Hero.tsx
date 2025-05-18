@@ -10,8 +10,7 @@ export default function Hero() {
         <Image
           src="/cover.png"
           alt="cover"
-          fill
-          className="relative object-cover sm:size-24 sm:object-top-left"
+          className="relative object-cover sm:object-top-left"
           priority
         />
 
