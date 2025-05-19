@@ -12,6 +12,7 @@ export default function Hero() {
           alt="cover"
           fill
           className="relative object-cover sm:object-top-left"
+          sizes="100vw"
           priority
         />
 
