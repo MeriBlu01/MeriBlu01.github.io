@@ -2,11 +2,13 @@
   "name": "digital-invitation-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://MeriBlu01.github.io/wedding-invitation",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com' && gh-pages -d out"
   },
   "dependencies": {
     "clsx": "^2.1.1",
