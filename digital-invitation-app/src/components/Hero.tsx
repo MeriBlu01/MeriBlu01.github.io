@@ -8,37 +8,43 @@ export default function Hero() {
       <div className="flex flex-col w-full h-screen mx-auto">
         {/* Background Image */}
         <Image
-          src="/cover.png"
+          src="/Images/cover.png"
           alt="cover"
           fill
-          className="relative object-cover sm:object-top-left"
+          className="relative object-cover brightness-75 sm:object-top-left"
           sizes="100vw"
           priority
         />
 
-        {/* Text Overlay */}
-        <div className="absolute inset-x-0 bottom-20 justify-center text-white px-4 text-center">
+        <div className="absolute inset-x-0 bottom-8 h-1/3 flex flex-col items-center justify-start text-white text-center">
+          {/* Header Overlay */}
           <h1
-            className={`${tangerine.className} text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold drop-shadow-lg`}
+            className={`${tangerine.className} text-6xl font-medium sm:text-6xl md:text-7xl lg:text-8xl`}
           >
             América y Alonso
           </h1>
 
           {/* Cover Leaf Divider Section */}
-          <div className="my-4">
-            <CoverLeafDivider />
-          </div>
+          <CoverLeafDivider />
+
+          {/* Text Overlay */}
           <p
-            className={`${tangerine.className} text-2xl sm:text-3xl md:text-4xl text-gold`}
+            className={`${tangerine.className} text-3xl font-bold text-light-glow-gold sm:text-3xl md:text-4xl lg:text-5xl`}
           >
             Sábado, 6 de Diciembre 2025
           </p>
         </div>
 
-        {/* Play Button */}
-        <button className="absolute bottom-4 right-4 bg-white/70 hover:bg-white/90 p-3 rounded-full shadow-md transition">
-          ▶
-        </button>
+        {/* Music Icon Button */}
+        <div className="absolute bottom-4 right-4 size-16">
+          <button className="relative group rounded-lg bg-white/70 hover:bg-white/90 transition">
+            <img
+              src="/Vectors/Icon-Music.svg"
+              className="fill-current"
+              alt="Music Icon"
+            />
+          </button>
+        </div>
       </div>
     </div>
   );

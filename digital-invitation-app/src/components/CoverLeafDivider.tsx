@@ -2,22 +2,26 @@ import Image from "next/image";
 
 export default function CoverLeafDivider() {
   return (
-    <div className="flex items-center max-w-md gap-6">
+    <div className="flex items-center justify-between w-1/3">
       {/* Normal Leaf */}
-      <Image
-        src="/leaf_left.svg"
-        alt="Mirrored Leaf Divider"
-        width={100}
-        height={50}
-      />
+      <div className="relative w-1/2 aspect-[2/1]">
+        <Image
+          src="/Vectors/leaf_left.svg"
+          alt="Left Leaf Divider"
+          fill
+          className="object-contain"
+        />
+      </div>
 
       {/* Mirrored Leaf */}
-      <Image
-        src="/leaf_right.svg"
-        alt="Mirrored Leaf Divider"
-        width={100}
-        height={50}
-      />
+      <div className="relative w-1/2 aspect-[2/1]">
+        <Image
+          src="/Vectors/leaf_right.svg"
+          alt="Mirrored Leaf Divider"
+          fill
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 }
