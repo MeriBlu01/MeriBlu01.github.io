@@ -16,12 +16,14 @@ export default function Hero() {
           priority
         />
 
-        <div className="absolute inset-x-0 bottom-8 h-1/3 flex flex-col items-center justify-start text-white text-center">
+        <div className="absolute inset-x-0 bottom-0 md:bottom-14 h-1/2 md:h-2/5 flex flex-col items-center justify-start text-white text-center">
           {/* Header Overlay */}
           <h1
-            className={`${tangerine.className} text-6xl font-medium sm:text-6xl md:text-7xl lg:text-8xl`}
+            className={`${tangerine.className} text-6xl font-bold sm:text-6xl md:text-7xl lg:text-9xl flex flex-col sm:flex-row gap-2 sm:gap-4`}
           >
-            América y Alonso
+            <span>América</span>
+            <span>&</span>
+            <span>Alonso</span>
           </h1>
 
           {/* Cover Leaf Divider Section */}
@@ -29,14 +31,14 @@ export default function Hero() {
 
           {/* Text Overlay */}
           <p
-            className={`${tangerine.className} text-3xl font-bold text-light-glow-gold sm:text-3xl md:text-4xl lg:text-5xl`}
+            className={`${tangerine.className} mt-11 md:mt-0 text-4xl font-bold text-light-glow-gold sm:text-4xl md:text-4xl lg:text-5xl`}
           >
             Sábado, 6 de Diciembre 2025
           </p>
         </div>
 
         {/* Music Icon Button */}
-        <div className="absolute bottom-4 right-4 sm:size-8 md:size-16">
+        <div className="absolute bottom-4 right-4 size-12 sm:size-12 md:size-16">
           <button className="relative group rounded-lg bg-white/70 hover:bg-white/90 transition">
             <img
               src="/Vectors/Icon-Music.svg"
