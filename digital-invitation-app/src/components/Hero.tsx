@@ -10,8 +10,8 @@ export default function Hero() {
         src="/cover.png"
         alt="cover"
         layout="responsive"
-        width={0} // ancho en 0 para usar "sizes"
-        height={0} // alto en 0 para usar "sizes"
+        width={0} 
+        height={0} 
         className="w-full h-auto"
         priority
       />
