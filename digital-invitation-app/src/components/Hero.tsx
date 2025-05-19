@@ -36,7 +36,7 @@ export default function Hero() {
         </div>
 
         {/* Music Icon Button */}
-        <div className="absolute bottom-4 right-4 size-16">
+        <div className="absolute bottom-4 right-4 sm:size-8 md:size-16">
           <button className="relative group rounded-lg bg-white/70 hover:bg-white/90 transition">
             <img
               src="/Vectors/Icon-Music.svg"
