@@ -62,3 +62,23 @@ body {
 .bg-yellow-4 {
   background-color: var(--color-yellow-4);
 }
+
+.bg-green-1 {
+  background-color: var(--color-green-1);
+}
+
+.bg-avocado {
+  background-color: var(--color-avocado);
+}
+
+.bg-taupe-gray {
+  background-color: var(--color-taupe-gray);
+}
+
+.bg-moon-mist {
+  background-color: var(--color-moon-mist);
+}
+
+.bg-cararra {
+  background-color: var(--color-cararra);
+}

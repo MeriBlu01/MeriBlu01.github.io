@@ -1,3 +1,4 @@
+import Image from "next/image";
 import InvitationTitle from "@/components/InvitationTitle";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
@@ -10,12 +11,36 @@ export default function Home() {
       <Hero />
       <NavBar />
 
-      {/* Countdown Timer Section */}
+      {/* Save The Date Section */}
       <div className="w-full bg-yellow-1 h-80 flex justify-center items-center">
-        <div className="relative w-1/3 h-4/5 mx-auto bg-yellow-2 rounded-lg flex flex-col">
-          <CountdownTimer targetDate="2025-12-06T18:00:00" />
+        <div className="w-3/5 h-4/5 flex justify-between items-center">
+          {/* Left Leaves Frame */}
+          <div className="relative w-1/6 h-4/5">
+            <Image
+              src="/Vectors/Detail-leaves-save-date-left.svg"
+              alt="left leaf frame for save the date"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          {/* Countdown Timer */}
+          <div className="relative w-1/2 h-4/5 flex flex-col">
+            <CountdownTimer targetDate="2025-12-06T18:00:00" />
+          </div>
+          {/* Left Leaves Frame */}
+          <div className="relative w-1/6 h-4/5">
+            <Image
+              src="/Vectors/Detail-leaves-save-date-right.svg"
+              alt="Right leaf frame for Save the Date"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
       </div>
+
       {/* Example Placeholder Section */}
       <section className="min-h-screenflex items-center justify-center px-4 sm:px-0">
         <div className="text-center">

@@ -1,4 +1,9 @@
-import { Great_Vibes, EB_Garamond, Tangerine, Simonetta } from "next/font/google";
+import {
+  Great_Vibes,
+  EB_Garamond,
+  Tangerine,
+  Simonetta,
+} from "next/font/google";
 
 export const greatVibes = Great_Vibes({
   weight: "400",
