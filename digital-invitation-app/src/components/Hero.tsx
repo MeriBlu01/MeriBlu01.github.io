@@ -34,7 +34,7 @@ export default function Hero() {
 
         {/* Text Overlay */}
         <p
-          className={`${tangerine.className} text-4xl font-bold text-light-glow-gold md:text-4xl lg:text-5xl`}
+          className={`${tangerine.className} text-3xl font-bold text-light-glow-gold md:text-4xl lg:text-5xl`}
         >
           Sábado, 6 de Diciembre 2025
         </p>
