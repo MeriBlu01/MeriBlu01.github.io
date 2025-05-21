@@ -1,44 +1,61 @@
+"use client"; // Required only if you're using Next.js App Router
+
+import { useState } from "react";
 import Image from "next/image";
 import { tangerine } from "@/lib/fonts";
 import CoverLeafDivider from "@/components/CoverLeafDivider";
 
 export default function Hero() {
+  const [active, setActive] = useState(false);
+
   return (
-    <div className="relative w-[100vw]">
+    <div className="relative w-full h-dvh flex flex-col">
       {/* Background Image */}
       <Image
-        src="/cover.png"
+        src="/Images/cover.png"
         alt="cover"
-        layout="responsive"
-        width={0} 
-        height={0} 
-        className="w-full h-auto"
+        fill
+        className="object-cover object-[35%_50%] brightness-75"
         priority
       />
 
-        {/* Text Overlay */}
-        <div className="absolute inset-x-0 bottom-20 justify-center text-white px-4 text-center">
-          <h1
-            className={`${tangerine.className} text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold drop-shadow-lg`}
-          >
-            América y Alonso
-          </h1>
+      {/* Text Overlay */}
+      <div className="absolute w-3/4 left-0 right-0 top-[45vh] md:top-[50vh] gap-y-20 md:gap-y-40 mx-auto flex flex-col items-center justify-start text-white text-center">
+        {/* Header Overlay */}
+        <h1
+          className={`${tangerine.className} text-6xl font-bold md:text-7xl lg:text-9xl flex flex-col md:flex-row gap-x-2 md:gap-x-4`}
+        >
+          <span>América</span>
+          <span>&</span>
+          <span>Alonso</span>
+        </h1>
 
-          {/* Cover Leaf Divider Section */}
-          <div className="my-4">
-            <CoverLeafDivider />
-          </div>
-          <p
-            className={`${tangerine.className} text-2xl sm:text-3xl md:text-4xl text-gold`}
-          >
-            Sábado, 6 de Diciembre 2025
-          </p>
-        </div>
+        <p
+          className={`${tangerine.className} text-3xl font-bold text-light-glow-gold md:text-4xl lg:text-5xl`}
+        >
+          Sábado, 6 de Diciembre 2025
+        </p>
+      </div>
 
-        {/* Play Button */}
-        <button className="absolute bottom-4 right-4 bg-white/70 hover:bg-white/90 p-3 rounded-full shadow-md transition">
-          ▶
+      {/* Cover Leaf Divider */}
+      <div className="absolute flex w-3/4 left-0 right-0 top-[67vh] md:top-[57vh] mx-auto justify-center">
+        <CoverLeafDivider />
+      </div>
+
+      {/* Music Icon Button */}
+      <div className="absolute bottom-4 right-4 size-12 md:size-16">
+        <button
+          onClick={() => setActive((prev) => !prev)}
+          className={`relative group rounded-lg transition duration-300
+            ${active ? "bg-white/90" : "bg-white/70 hover:bg-white/90"}`}
+        >
+          <img
+            src="/Vectors/Icon-Music.svg"
+            alt="Music Icon"
+            className={`fill-current ${active ? "animate-pulse" : ""}`}
+          />
         </button>
       </div>
+    </div>
   );
 }

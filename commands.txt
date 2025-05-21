@@ -5,6 +5,10 @@ node -v (JS)
 # Generate a basic package.json file
 npm init -y
 
+# Restart the dev server
+cd digital-invitation-app
+npm run dev
+
 # Preview visualize the Github Page Deploy
 npx serve out
 
