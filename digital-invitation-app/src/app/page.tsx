@@ -5,19 +5,13 @@ import NavBar from"@/components/NavBar";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full bg-[#FBFAF7]">
+    <main className="flex flex-col items-center w-full bg-yellow-1">
       {/* Hero Section */}
       <Hero />
       <NavBar />
       {/* Example Placeholder Section */}
-      <section className="min-h-screenflex items-center justify-center px-4 sm:px-0">
-        <div className="text-center">
-          
-          <InvitationTitle title="Estás cordialmente invitado" />
-          <p className="text-gray-700 mt-4 max-w-xl mx-auto">
-            Acompáñanos a celebrar nuestro amor en una ceremonia especial...
-          </p>
-        </div>
+      <section className="w-full sm:px-[16px] lg:px-[80px] mt-[40px]">
+          <InvitationTitle />
       </section>
 
       {/* Add more components below */}
