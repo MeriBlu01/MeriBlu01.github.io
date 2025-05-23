@@ -25,7 +25,7 @@ const links: LinkItem[] = [
 export default function NavBar():JSX.Element{
     const [isOpen, setIsOpen]=useState(false);
     return(
-        <header className="w-full bg-[#F4F2EB] border-b-[2px] border-[#4A4700] px-[16px] lg:px-[80px]">
+        <header className="w-full bg-yellow-2 border-bot-green1 px-[16px] lg:px-[80px]">
             <nav className="flex">
                 {/*pantallas pequeñas */}
                 <div className="w-full flex justify-between lg:hidden "> 
