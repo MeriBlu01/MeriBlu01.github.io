@@ -1,8 +1,10 @@
 import Image from "next/image";
-import InvitationTitle from "@/components/InvitationTitle";
+import Invitation from "@/components/InvitationTitle";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
 import CountdownTimer from "@/components/CountdownTimer";
+import Schedule from "@/components/ScheduleCard";
+import DressCode from "@/components/DressCodeCard";
 
 export default function Home() {
   return (
@@ -10,8 +12,11 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
       <NavBar />
-      <section className="w-full sm:px-[16px] lg:px-[80px] mt-[40px]">
-          <InvitationTitle />
+      <section className="flex flex-col justify-center w-full sm:px-[16px] lg:px-[80px] mt-[40px] gap-[24px]">
+          <Invitation />
+          <Schedule />
+          <DressCode/>
+
       </section>
 
       {/* Save The Date Section */}
