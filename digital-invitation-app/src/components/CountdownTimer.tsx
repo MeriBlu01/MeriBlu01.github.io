@@ -37,21 +37,21 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   return (
     <div className="flex flex-col justify-center">
       <h2
-        className={`${tangerine.className} text-black text-center text-3xl md:text-7xl`}
+        className={`${tangerine.className} text-black tracking-wide md:tracking-normal text-center text-4xl md:text-7xl`}
       >
         Save the Date
       </h2>
-      <div className="absolute bottom-0 w-full h-1/2">
+      <div className="absolute bottom-5 md:bottom-0 w-full h-1/2">
         <div className="grid grid-cols-4 h-full">
           <div className="bg-avocado flex items-center justify-center">
             <div
               className={`${simonetta.className} text-center flex flex-col gap-y-3`}
             >
-              <span className="text-black text-2xl md:text-3xl">
+              <span className="text-black text-xl md:text-3xl">
                 {timeLeft.days}d
               </span>
               <p>
-                <span className="text-black text-xl md:text-2xl">Días</span>
+                <span className="text-black text-base md:text-2xl">Días</span>
               </p>
             </div>
           </div>
@@ -59,11 +59,11 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             <div
               className={`${simonetta.className} text-center flex flex-col gap-y-3`}
             >
-              <span className="text-black text-2xl md:text-3xl">
+              <span className="text-black text-xl md:text-3xl">
                 {timeLeft.hours}h
               </span>
               <p>
-                <span className="text-black text-xl md:text-2xl">Horas</span>
+                <span className="text-black text-base md:text-2xl">Horas</span>
               </p>
             </div>
           </div>
@@ -71,11 +71,11 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             <div
               className={`${simonetta.className} text-center flex flex-col gap-y-3`}
             >
-              <span className="text-black text-2xl md:text-3xl">
+              <span className="text-black text-xl md:text-3xl">
                 {timeLeft.minutes}m
               </span>
               <p>
-                <span className="text-black text-xl md:text-2xl">Mins</span>
+                <span className="text-black text-base md:text-2xl">Mins</span>
               </p>
             </div>
           </div>
@@ -83,11 +83,11 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
             <div
               className={`${simonetta.className} text-center flex flex-col gap-y-3`}
             >
-              <span className="text-black text-2xl md:text-3xl">
+              <span className="text-black text-xl md:text-3xl">
                 {timeLeft.seconds}s
               </span>
               <p>
-                <span className="text-black text-xl md:text-2xl">Segs</span>
+                <span className="text-black text-base md:text-2xl">Segs</span>
               </p>
             </div>
           </div>
