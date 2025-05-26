@@ -4,6 +4,7 @@ import NavBar from "@/components/NavBar";
 import SaveTheDate from "@/components/SaveTheDate";
 import Schedule from "@/components/ScheduleCard";
 import DressCode from "@/components/DressCodeCard";
+import BigPicture from "@/components/BigPicture";
 
 export default function Home() {
   return (
@@ -18,12 +19,12 @@ export default function Home() {
       </section>
 
       {/* Save The Date */}
-      <section className="w-full bg-yellow-1 h-60 md:h-80 flex justify-center items-center">
+      <section className="w-full h-60 md:h-80 flex justify-center items-center">
         <SaveTheDate />
       </section>
 
       {/* Big Picture Section */}
-
+      <BigPicture imageSrc="/Images/8.png" altText="Couple in the bridge" />
       {/* Add more components below */}
     </main>
   );
