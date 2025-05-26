@@ -23,7 +23,7 @@ export default function Home() {
         <SaveTheDate />
       </section>
 
-      {/* Example Placeholder Section */}
+      {/* Big Picture Section */}
 
       {/* Add more components below */}
     </main>
