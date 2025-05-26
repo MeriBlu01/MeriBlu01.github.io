@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Invitation from "@/components/InvitationTitle";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
