@@ -5,3 +5,122 @@ desde un blog mayormente estático hasta una aplicación dinámica compleja.
 Para crear un nuevo proyecto de Next.js, ejecuta en tu terminal:
 
 -> npx create-next-app@latest
+
+-> How does Next.js optimize fonts?
+    Next.js downloads font files at build time and hosts them with your other 
+    static assets. 
+    This means when a user visits your application, there are no additional 
+    network requests for fonts which would impact performance.
+
+
+* DOM ------------------------------------------
+The DOM is an object representation of the HTML elements. 
+It acts as a bridge between your code and the user interface, 
+and has a tree-like structure with parent and child relationships.
+
+
+* JSX ------------------------------------------
+JSX is a syntax extension for JavaScript that allows you to describe your UI in 
+a familiar HTML-like syntax. The nice thing about JSX is that apart from following 
+three JSX rules, you don't need to learn any new symbols or syntax outside of HTML 
+and JavaScript.
+
+But browsers don't understand JSX out of the box, so you'll need a JavaScript compiler, 
+such as a Babel, to transform your JSX code into regular JavaScript.
+
+
+* REACT CORE CONCEPTS ------------------------------------------
+
+-> Components
+    User interfaces can be broken down into smaller building blocks called components.
+    Components allow you to build self-contained, reusable snippets of code. 
+    If you think of components as LEGO bricks, you can take these individual 
+    bricks and combine them together to form larger structures. 
+    If you need to update a piece of the UI, you can update the specific component or brick.
+
+    In React, components are functions. Inside your <script> tag.
+
+-> Props
+    Regular HTML elements have attributes that you can use to pass pieces 
+    of information that change the behavior of those elements. 
+    For example, changing the src attribute of an <img> element changes the 
+    image that is shown. 
+    Changing the href attribute of an <a> tag changes the destination of the link.
+
+    In the same way, you can pass pieces of information as properties to React components. 
+    These are called 'props'.
+
+    Note: In React, data flows down the component tree. 
+    This is referred to as one-way data flow. 
+
+    Example:
+    function Header({ title }) {
+        return <h1>{title ? title : 'Default title'}</h1>;
+    }
+
+    function HomePage() {
+        return (
+            <div>
+                <Header title="React" />
+                <Header title="A new title" />
+            </div>
+        );
+    }
+
+    or iterating through lists...
+
+    function HomePage() {
+        const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+    
+        return (
+            <div>
+                <Header title="Develop. Preview. Ship." />
+                <ul>
+                    {names.map((name) => (
+                        <li key={name}>{name}</li>
+                    ))}
+                </ul>
+            </div>
+        );
+    }
+
+-> state
+    Note: Unlike props which are passed to components as the first function 
+    parameter and are read only, the state is initiated and stored within a component. 
+    You can pass the state information to children components as props, 
+    but the logic for updating the state should be kept within the component 
+    where state was initially created.
+
+    Example:
+
+    function HomePage() {
+        // ...
+        const [likes, setLikes] = React.useState(0);
+        
+        function handleClick() {
+            setLikes(likes + 1);
+        }
+        
+        return (
+            <div>
+                {/* ... */}
+                <button onClick={handleClick}>Likes ({likes})</button>
+            </div>
+        );
+    }
+
+
+* CSS Styling ------------------------------------------
+<div
+  className="relative w-0 h-0 border-l-[15px] border-r-[15px] border-b-[26px] border-l-transparent border-r-transparent border-b-black"
+/>
+
+
+* Tailwind ---------------------------------------------
+
+-> Responsive design
+    Prefix a position utility with a breakpoint variant like md: 
+    to only apply the utility at medium screen sizes and above:
+        <div class="relative md:absolute ...">
+            <!-- ... -->
+        </div>
