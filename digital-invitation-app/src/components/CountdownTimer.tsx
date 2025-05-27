@@ -20,18 +20,25 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
     };
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState<ReturnType<
+    typeof calculateTimeLeft
+  > | null>(null);
+
+  const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
+    setHasMounted(true); // It runs only on client side
+    setTimeLeft(calculateTimeLeft());
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
-  if (!timeLeft) {
-    return <p>¡Ya llegó el día!</p>;
+  if (!hasMounted || !timeLeft) {
+    return <p className="text-center">¡Ya llegó el día!</p>;
   }
 
   return (
@@ -43,55 +50,42 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
       </h2>
       <div className="absolute bottom-5 md:bottom-0 w-full h-1/2">
         <div className="grid grid-cols-4 h-full">
-          <div className="bg-avocado flex items-center justify-center">
-            <div
-              className={`${simonetta.className} text-center flex flex-col gap-y-3`}
-            >
-              <span className="text-black text-xl md:text-3xl">
-                {timeLeft.days}d
-              </span>
-              <p>
-                <span className="text-black text-base md:text-2xl">Días</span>
-              </p>
-            </div>
-          </div>
-          <div className="bg-taupe-gray flex items-center justify-center">
-            <div
-              className={`${simonetta.className} text-center flex flex-col gap-y-3`}
-            >
-              <span className="text-black text-xl md:text-3xl">
-                {timeLeft.hours}h
-              </span>
-              <p>
-                <span className="text-black text-base md:text-2xl">Horas</span>
-              </p>
-            </div>
-          </div>
-          <div className="bg-moon-mist flex items-center justify-center">
-            <div
-              className={`${simonetta.className} text-center flex flex-col gap-y-3`}
-            >
-              <span className="text-black text-xl md:text-3xl">
-                {timeLeft.minutes}m
-              </span>
-              <p>
-                <span className="text-black text-base md:text-2xl">Mins</span>
-              </p>
-            </div>
-          </div>
-          <div className="bg-cararra flex items-center justify-center">
-            <div
-              className={`${simonetta.className} text-center flex flex-col gap-y-3`}
-            >
-              <span className="text-black text-xl md:text-3xl">
-                {timeLeft.seconds}s
-              </span>
-              <p>
-                <span className="text-black text-base md:text-2xl">Segs</span>
-              </p>
-            </div>
-          </div>
+          <CountdownBox label="Días" value={timeLeft.days} bg="bg-avocado" />
+          <CountdownBox
+            label="Horas"
+            value={timeLeft.hours}
+            bg="bg-taupe-gray"
+          />
+          <CountdownBox
+            label="Mins"
+            value={timeLeft.minutes}
+            bg="bg-moon-mist"
+          />
+          <CountdownBox label="Segs" value={timeLeft.seconds} bg="bg-cararra" />
         </div>
+      </div>
+    </div>
+  );
+}
+
+function CountdownBox({
+  label,
+  value,
+  bg,
+}: {
+  label: string;
+  value: number;
+  bg: string;
+}) {
+  return (
+    <div className={`${bg} flex items-center justify-center`}>
+      <div
+        className={`${simonetta.className} text-center flex flex-col gap-y-3`}
+      >
+        <span className="text-black text-xl md:text-3xl">{value}</span>
+        <p>
+          <span className="text-black text-base md:text-2xl">{label}</span>
+        </p>
       </div>
     </div>
   );

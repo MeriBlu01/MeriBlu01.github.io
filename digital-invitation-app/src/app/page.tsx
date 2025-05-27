@@ -14,6 +14,8 @@ export default function Home() {
       <NavBar />
       <section className="flex flex-col justify-center w-full sm:px-[16px] lg:px-[80px] mt-[40px] gap-[24px]">
         <Invitation />
+        {/* Big Picture Section */}
+        <BigPicture imageSrc="/Images/8.png" altText="Couple in the bridge" />
         <Schedule />
         <DressCode />
       </section>
@@ -24,7 +26,11 @@ export default function Home() {
       </section>
 
       {/* Big Picture Section */}
-      <BigPicture imageSrc="/Images/8.png" altText="Couple in the bridge" />
+      <BigPicture
+        imageSrc="/Images/10.png"
+        altText="Couple hugging on the fence"
+      />
+
       {/* Add more components below */}
     </main>
   );

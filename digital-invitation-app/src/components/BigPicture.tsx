@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { tangerine } from "@/lib/fonts";
 
 interface InvitationSectionProps {
   imageSrc: string;
