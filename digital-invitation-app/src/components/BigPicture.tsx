@@ -10,13 +10,13 @@ export default function BigPicture({
   altText,
 }: InvitationSectionProps) {
   return (
-    <section className="w-full h-dvh flex flex-col items-center justify-center">
-      <div className="relative w-1/3 h-1/6">
+    <section className="w-full h-96 md:h-dvh flex flex-col items-center justify-center">
+      <div className="relative w-3/4 md:w-1/3 h-1/6">
         <Image
           src="/Vectors/Detail-leaves-bot.svg"
           alt="Top leaves decoration"
           fill
-          className="rotate-180 mask-y-from-90% object-contain"
+          className="rotate-180 object-contain"
           priority
         />
       </div>
@@ -29,12 +29,12 @@ export default function BigPicture({
           priority
         />
       </div>
-      <div className="relative w-1/3 h-1/6">
+      <div className="relative w-3/4 md:w-1/3 h-1/6">
         <Image
           src="/Vectors/Detail-leaves-bot.svg"
           alt="Bottom leaves decoration"
           fill
-          className="mask-y-from-90% object-contain"
+          className="object-contain"
           priority
         />
       </div>
