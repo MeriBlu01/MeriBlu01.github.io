@@ -36,7 +36,7 @@ body {
   --color-taupe-gray: #b7b699;
   --color-moon-mist: #dbdbcc;
   --color-cararra: #f1f1eb;
-  --color-red-brown: #4A1300;
+  --color-red-brown: #4a1300;
 }
 
 .text-glow-gold {
@@ -96,14 +96,20 @@ body {
   color: var(--color-red-brown);
 }
 
+.border-yellow-3 {
+  border-color: var(--color-yellow-3);
+  border-width: 2px;
+}
+
 .border-bot-green1 {
   border-bottom-color: #4a4700;
   border-width: 2px;
 }
 
-.invitation-background{
-  background-image: url('/Vectors/Detail-frame-left.svg'), url('/Vectors/Detail-frame-right.svg');
+.invitation-background {
+  background-image: url("/Vectors/Detail-frame-left.svg"),
+    url("/Vectors/Detail-frame-right.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: left center, right center;
-  background-size: contain, contain; 
+  background-size: contain, contain;
 }
