@@ -5,6 +5,7 @@ import SaveTheDate from "@/components/SaveTheDate";
 import Schedule from "@/components/ScheduleCard";
 import DressCode from "@/components/DressCodeCard";
 import BigPicture from "@/components/BigPicture";
+import TimeAndLocation from "@/components/TimeAndLocation";
 
 export default function Home() {
   return (
@@ -30,6 +31,9 @@ export default function Home() {
         imageSrc="/Images/10.png"
         altText="Couple hugging on the fence"
       />
+
+      {/* Event time and location */}
+      <TimeAndLocation />
 
       {/* Add more components below */}
     </main>

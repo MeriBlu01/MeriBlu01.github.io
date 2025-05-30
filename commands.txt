@@ -29,7 +29,9 @@ npx tailwindcss init -p // This time was not needed since the postcss.config.mjs
     git remote -v
 # Check the commit history
     git log --oneline
-
+# Templates
+    [Chore] Address section added
+    [Chore] Big Picture section resized to fit mobile screens
 
 * Vercel -----------------------------------
 # Install Vercel CLI
