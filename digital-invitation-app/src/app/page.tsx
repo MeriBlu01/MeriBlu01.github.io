@@ -29,10 +29,10 @@ export default function Home() {
       {/* Big Picture Section */}
       <BigPicture
         imageSrc="/Images/10.png"
-        altText="Couple hugging on the fence"
+        altText="Couple hugging next to the fence"
       />
 
-      {/* Event time and location */}
+      {/* Event time and location details */}
       <TimeAndLocation />
 
       {/* Add more components below */}
