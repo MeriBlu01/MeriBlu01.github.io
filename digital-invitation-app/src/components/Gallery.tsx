@@ -9,12 +9,12 @@ export default function Gallery() {
     <div className="bg-yellow-2 w-full h-fit p-5 md:p-5 flex flex-col justify-center items-center gap-y-15">
       <div className="w-full flex flex-col items-center justify-center text-center gap-y-5">
         <h1
-          className={`${tangerine.className} font-bold text-yellow-4 text-[44px] md:text-[74px]`}
+          className={`${tangerine.className} font-bold text-yellow-4 text-[46px] md:text-[74px]`}
         >
           Nuestro amor...
         </h1>
         <p
-          className={`${simonetta.className} text-red-brown text-[38px] md:text-[30px]`}
+          className={`${simonetta.className} text-red-brown text-[24px] md:text-[30px]`}
         >
           &quot;El amor jamás dejará de existir...&quot;
         </p>

@@ -3,7 +3,6 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
 import Image from "next/image";
-import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [

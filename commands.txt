@@ -20,7 +20,7 @@ npx serve out
     git log --oneline
 # Templates
     [Chore] Map section added
-    [Chore] Address section (TimeAndLocation) resized to fit mobile screens
+    [Chore] Gallery section (Gallery, Carousel) resized to fit mobile screens
     [Chore] Configuring the TimeAndLocation component for mobile responsive resizing
 
 
