@@ -4,7 +4,7 @@ import { tangerine } from "@/lib/fonts";
 
 export default function Message() {
   return (
-    <div className=" w-full md:w-2/3 h-fit p-4 md:p-15 flex justify-between items-center">
+    <div className="w-full md:w-2/3 h-fit p-4 md:p-15 flex justify-between items-center">
       {/* Left Leaves Frame */}
       <div className="relative w-[100px] md:w-1/6 aspect-[101/146]">
         <Image

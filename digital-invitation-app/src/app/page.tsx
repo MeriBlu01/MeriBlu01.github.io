@@ -8,6 +8,7 @@ import BigPicture from "@/components/BigPicture";
 import TimeAndLocation from "@/components/TimeAndLocation";
 import Gallery from "@/components/Gallery";
 import Message from "@/components/Message";
+import SocialNetworks from "@/components/SocialNetworks";
 
 export default function Home() {
   return (
@@ -42,6 +43,9 @@ export default function Home() {
 
       {/* We are waiting for you */}
       <Message />
+
+      {/* Social Networks */}
+      <SocialNetworks />
 
       {/* Add more components below */}
     </main>
