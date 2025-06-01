@@ -2,10 +2,19 @@ import Image from "next/image";
 import { simonetta } from "@/lib/fonts";
 import { tangerine } from "@/lib/fonts";
 
-export default function Message() {
+export default function Form() {
   return (
-    <div className="w-full md:w-2/3 h-fit p-4 md:p-15 flex justify-between items-center">
-      {/* Left Leaves Frame */}
+    <div className="bg-yellow-2 w-full h-fit p-12 md:p-15 flex flex-col justify-between items-center">
+      {/* Confirm Attendance Header */}
+      <div className="flex justify-center">
+        <div className="flex gap-10 items-center w-fit mx-auto">
+          <h1
+            className={`${tangerine.className} font-extrabold text-green-1 text-[42px] md:text-[74px]`}
+          >
+            Confirmar asistencia
+          </h1>
+        </div>
+      </div>
       <div className="relative w-[100px] md:w-1/6 aspect-[101/146]">
         <Image
           src="/Vectors/Detail-leaves-save-date-left.svg"
