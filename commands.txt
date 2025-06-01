@@ -12,17 +12,6 @@ npm run dev
 # Preview visualize the Github Page Deploy
 npx serve out
 
-* REACT ------------------------------------
-# Create a React Project with Next.js framework
-npx create-next-app@latest
-# Install Tailwind and its dependencies
-npm install -D tailwindcss postcss autoprefixer   // The -D flag means it’s a dev dependency.
-# Initialize Tailwind config
-npx tailwindcss init -p // This time was not needed since the postcss.config.mjs file was created
-
-
-
-
 
 * GIT --------------------------------------
 # Check your remote repository connection
@@ -31,12 +20,44 @@ npx tailwindcss init -p // This time was not needed since the postcss.config.mjs
     git log --oneline
 # Templates
     [Chore] Map section added
-    [Chore] Big Picture section resized to fit mobile screens
+    [Chore] Address section (TimeAndLocation) resized to fit mobile screens
+    [Chore] Configuring the TimeAndLocation component for mobile responsive resizing
+
+
+* REACT ------------------------------------
+# Create a React Project with Next.js framework
+npx create-next-app@latest
+# Install Tailwind and its dependencies
+npm install -D tailwindcss postcss autoprefixer   // The -D flag means it’s a dev dependency.
+# Initialize Tailwind config
+npx tailwindcss init -p // This time was not needed since the postcss.config.mjs file was created
+# Icons Source
+-> https://react-icons.github.io/react-icons/
+-> https://lucide.dev/icons/
+    Installation command: npm install lucide-react
+    For React Native use the lucide-react-native package.
+    https://lucide.dev/guide/packages/lucide-react
+-> https://heroicons.com/
+    Installation command: npm install @heroicons/react
+    https://github.com/tailwindlabs/heroicons
+    https://app.unpkg.com/@heroicons/react@2.2.0/files/24/outline
+
+# Install dependencies
+-> npm install keen-slider
+    Notes:
+    - keen-slider__slide handles the layout
+    - perView: 2 shows two slides at a time
+    - Responsive fallback for mobile: 1 image at a time
+    - You can customize the arrow icons
+    - Source: https://keen-slider.io/docs
+
+-> npm install @heroicons/react
+    import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"; (lighter)
+
 
 * Vercel -----------------------------------
 # Install Vercel CLI
     npm install -g vercel
     npm uninstall -g vercel
-
 
 

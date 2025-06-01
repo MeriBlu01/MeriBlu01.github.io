@@ -6,6 +6,7 @@ import Schedule from "@/components/ScheduleCard";
 import DressCode from "@/components/DressCodeCard";
 import BigPicture from "@/components/BigPicture";
 import TimeAndLocation from "@/components/TimeAndLocation";
+import Gallery from "@/components/Gallery";
 
 export default function Home() {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
 
       {/* Event time and location details */}
       <TimeAndLocation />
+
+      {/* Gallery - Save The Date session - Carousel */}
+      <Gallery />
 
       {/* Add more components below */}
     </main>
