@@ -96,6 +96,10 @@ body {
   color: var(--color-yellow-4);
 }
 
+.text-green-1 {
+  color: var(--color-green-1);
+}
+
 .text-red-brown {
   color: var(--color-red-brown);
 }
