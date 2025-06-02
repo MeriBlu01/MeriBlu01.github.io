@@ -21,7 +21,7 @@ npx serve out
 # Templates
     [Chore] Map section added
     [Chore] Message section (Message) resized to fit mobile screens
-    [Chore] Social Networks section (SocialNetworks) added and resized to fit mobile screens
+    [Chore] Form section (Form, CustomDropdown) added and resized to fit mobile screens
     [Chore] Configuring the TimeAndLocation component for mobile responsive resizing
 
 

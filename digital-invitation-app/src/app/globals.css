@@ -37,6 +37,7 @@ body {
   --color-moon-mist: #dbdbcc;
   --color-cararra: #f1f1eb;
   --color-red-brown: #4a1300;
+  --color-neutral: #fcf9f7;
 }
 
 .text-glow-gold {
@@ -84,6 +85,22 @@ body {
   background-color: var(--color-cararra);
 }
 
+.bg-neutral {
+  background-color: var(--color-neutral);
+}
+
+@layer utilities {
+  .hover\:bg-moon-mist:hover {
+    background-color: var(--color-moon-mist);
+  }
+}
+
+@layer utilities {
+  .hover\:bg-yellow-3:hover {
+    background-color: var(--color-yellow-3);
+  }
+}
+
 .text-yellow-2 {
   color: var(--color-yellow-2);
 }
@@ -109,9 +126,20 @@ body {
   border-width: 2px;
 }
 
+.border-yellow-4 {
+  border-color: var(--color-yellow-4);
+  border-width: 1px;
+}
+
 .border-bot-green1 {
   border-bottom-color: #4a4700;
   border-width: 2px;
+}
+
+.focus\:ring-yellow-4 {
+  &:focus {
+    --tw-ring-color: var(--color-yellow-4);
+  }
 }
 
 .invitation-background {
