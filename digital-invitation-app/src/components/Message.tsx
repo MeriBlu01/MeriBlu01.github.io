@@ -5,7 +5,6 @@ import { tangerine } from "@/lib/fonts";
 export default function Message() {
   return (
     <section className="w-full flex justify-center">
-
       <div className="w-full md:w-2/3 h-fit p-4 md:p-15 flex justify-between items-center">
         {/* Left Leaves Frame */}
         <div className="relative w-[100px] md:w-1/6 aspect-[101/146]">

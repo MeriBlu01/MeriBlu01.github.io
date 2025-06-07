@@ -87,6 +87,35 @@ Example: An image stored at `/public/hero.png` can be accessed via `https://your
 
 ---
 
+## Environment Variables (.env.local)
+
+This project uses a .env.local file to store sensitive information and personalized links related to the gift registry. These variables are accessed from the frontend using the NEXT_PUBLIC_ prefix.
+
+### Gift Registry Links
+External gift registry links were configured for the following platforms:
+
+-NEXT_PUBLIC_LIVERPOOL_GIFT_URL – Link to the gift registry on Liverpool
+-NEXT_PUBLIC_LIVERPOOL_NUMBER – Event number on Liverpool
+-NEXT_PUBLIC_AMAZON_GIFT_URL – Link to the gift registry on Amazon
+
+### Bank Account Details (Bank)
+Bank account details were also included for anyone who wishes to make a deposit:
+
+-NEXT_PUBLIC_BANK_NAME – Name of the account holder
+-NEXT_PUBLIC_BANK_CODE_NUMBER – Interbank CLABE (transfer code)
+-NEXT_PUBLIC_BANK_ACCOUNT_NUMBER – Bank account number
+
+### Example of `.env.local`
+
+```env
+NEXT_PUBLIC_LIVERPOOL_GIFT_URL=https://www.liverpool.com.mx/evento/your-event
+NEXT_PUBLIC_LIVERPOOL_NUMBER=12345678
+NEXT_PUBLIC_AMAZON_GIFT_URL=https://www.amazon.com.mx/hz/wishlist/ls/XXXXXXXXXXX
+NEXT_PUBLIC_SANTANDER_NAME=AccountHolderName
+NEXT_PUBLIC_SANTANDER_CODE_NUMBER=012345678901234567
+NEXT_PUBLIC_SANTANDER_ACCOUNT_NUMBER=12345678901 
+```
+
 ## Best Practices Followed
 
 - Keep components **small** and **reusable**

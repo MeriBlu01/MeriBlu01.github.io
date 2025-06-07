@@ -51,7 +51,7 @@ export default function Carousel() {
       {/* Left Arrow */}
       <button
         onClick={() => slider.current?.prev()}
-        className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition z-10"
+        className="absolute top-1/2 left-2 -translate-y-1/2 bg-white/80 p-2 rounded-full shadow-md hover:bg-white transition z-10"
       >
         <ChevronLeft className="text-yellow-3" strokeWidth={3} />
       </button>
