@@ -18,7 +18,7 @@ export default function Message() {
       {/* Message */}
       <div className="relative w-3/5 md:w-1/2 h-full p-2 gap-4 md:gap-6 flex flex-col items-center justify-center text-center">
         <h1
-          className={`${tangerine.className} font-extrabold text-green-1 text-[42px] md:text-[74px]`}
+          className={`${tangerine.className} font-extrabold text-green-1 text-[40px] md:text-[74px]`}
         >
           Te esperamos...
         </h1>
