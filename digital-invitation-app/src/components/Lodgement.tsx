@@ -60,12 +60,12 @@ export default function HotelCard(){
                     className="w-full flex flex-col justify-center items-center gap-[16px]  relative">
                         <h2 className={`${tangerine.className} font-extrabold text-center text-[36px] text-red-brown`}>{info.name}</h2>
                         <div className="w-full flex flex-row justify-items-start items-center gap-[16px]">
-                            <Image src="/Vectors/Icon-location.svg" alt="" />
+                            <Image src="/Vectors/Icon-location.svg" width={32} height={42.67} alt=""  />
                             <p className={`${simonetta.className} text-[24px] font-normal text-black`}>{info.location}</p>
                         </div>
 
                         <div className="w-full flex flex-row justify-items-start items-center gap-[16px]">
-                            <Image src="/Vectors/Icon-phone.svg" alt="" />
+                            <Image src="/Vectors/Icon-phone.svg" width={40} height={40} alt="" />
                             <p className={`${simonetta.className} text-[24px]  font-normal text-black`}>{info.phone}</p>
                         </div>
 
