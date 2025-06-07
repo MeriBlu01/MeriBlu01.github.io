@@ -10,14 +10,16 @@ export default function Hero() {
 
   return (
     <div className="relative w-full h-dvh flex flex-col">
-      {/* Background Image */}
-      <Image
-        src="/Images/cover.png"
-        alt="cover"
-        fill
-        className="object-cover object-[35%_50%] brightness-75"
-        priority
-      />
+      <div className="relative h-full aspect-[5861/3907]">
+        {/* Background Image */}
+        <Image
+          src="/Images/cover.png"
+          alt="cover"
+          fill
+          className="object-cover object-[35%_5%] brightness-75"
+          priority
+        />
+      </div>
 
       {/* Text Overlay */}
       <div className="absolute w-3/4 left-0 right-0 top-[45vh] md:top-[50vh] gap-y-20 md:gap-y-40 mx-auto flex flex-col items-center justify-start text-white text-center">
@@ -49,11 +51,15 @@ export default function Hero() {
           className={`relative group rounded-lg transition duration-300
             ${active ? "bg-white/90" : "bg-white/70 hover:bg-white/90"}`}
         >
-          <img
-            src="/Vectors/Icon-Music.svg"
-            alt="Music Icon"
-            className={`fill-current ${active ? "animate-pulse" : ""}`}
-          />
+          <div className="relative size-12 md:size-16 aspect-[1/1]">
+            <Image
+              src="/Vectors/Icon-Music.svg"
+              alt="Music Icon"
+              fill
+              className={`fill-current ${active ? "animate-pulse" : ""}`}
+              priority
+            />
+          </div>
         </button>
       </div>
     </div>
