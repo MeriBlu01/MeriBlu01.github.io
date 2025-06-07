@@ -49,7 +49,7 @@ const titleIcons: ScheduleIcon[]=[
 
 export default function Schedule(): JSX.Element{
     return(
-        <section className="h-full flex flex-col justify-center lg:px-[80px] py-[32px] bg-yellow-2 gap-0">
+        <section className="w-full flex flex-col justify-center lg:px-[80px] py-[32px] bg-yellow-2 gap-0">
             <h1 className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}>Itinerario</h1>
             <img src="/Vectors/Detail-flower.svg" alt="flower" width={151.48} height={75.97} className="mx-auto" />
             <div className="flex flex-row justify-between ">

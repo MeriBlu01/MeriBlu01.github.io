@@ -1,5 +1,4 @@
 "use client"
-import { JSX } from "react";
 import { simonetta } from "@/lib/fonts";
 
 type ButtonsElement ={

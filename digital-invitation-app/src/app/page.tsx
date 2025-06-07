@@ -11,6 +11,7 @@ import Message from "@/components/Message";
 import SocialNetworks from "@/components/SocialNetworks";
 import Form from "@/components/Form";
 import HotelCard from "@/components/Lodgement";
+import GiftsTableCard from "@/components/GiftsTableCard";
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
           altText="Couple hugging next to the fence"
         />
         <HotelCard/>
+        <GiftsTableCard/>
         {/* RSVP Form */}
         <Form />
         {/* We are waiting for you */}
