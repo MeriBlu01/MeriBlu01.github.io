@@ -4,6 +4,7 @@ import Image from "next/image";
 import { simonetta } from "@/lib/fonts";
 import { tangerine } from "@/lib/fonts";
 import CustomDropdown from "@/components/CustomDropdown";
+import GreenButton from "./Buttons";
 
 export default function Form() {
   const handleChange = (value: string) => {
@@ -140,12 +141,14 @@ export default function Form() {
 
         {/* Submit Button */}
         <div className="flex justify-center pb-[50px]">
-          <button
+          {/*<button
             type="submit"
             className="bg-yellow-4 hover:bg-amber-500 transition-colors text-white px-6 py-3 rounded-md mt-6"
           >
             Enviar
-          </button>
+          </button> */}
+          <GreenButton btnText="Enviar"/>
+
         </div>
       </form>
     </section>

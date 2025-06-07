@@ -39,8 +39,8 @@ const textIcons: DressClothes[] = [
 
 export default function DressCode(): JSX.Element {
   return (
-    <section className="h-full flex flex-col justify-center lg:px-[80px] py-[24px] gap-[32px]">
-      <div className="h-full flex flex-col justify-center gap-0-">
+    <section className="w-full flex flex-col justify-center sm:px-[16px] lg:px-[80px] py-[24px] gap-[32px]">
+      <div className="w-full flex flex-col justify-center gap-0-">
         <h1
           className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}
         >
