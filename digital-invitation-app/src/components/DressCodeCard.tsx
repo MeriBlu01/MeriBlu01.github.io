@@ -46,7 +46,7 @@ export default function DressCode(): JSX.Element {
         >
           Codigo de Vestimenta
         </h1>
-        <img
+        <Image
           src="/Vectors/Detail-creeper.svg"
           alt="flower"
           width={290}
@@ -93,7 +93,7 @@ export default function DressCode(): JSX.Element {
             también la disfrutes tanto como nosotros, por eso hemos decidido no
             extender la invitación a los niños. 
           </p>
-          <img
+          <Image
             src="/Vectors/Icon-NoKids.svg"
             alt="NoKids"
             width={80}

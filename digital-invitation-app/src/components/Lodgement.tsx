@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { simonetta, tangerine } from "@/lib/fonts";
 import GreenButton from "./Buttons";
-
+import Image from "next/image";
 
 
 type Hotel = {
@@ -50,7 +50,7 @@ export default function HotelCard(){
         <section className="w-full lg:px-[80px]">
             <div className="w-full flex flex-col justify-center">
                 <h1 className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}>Hospedaje</h1>
-                <img src="/Vectors/Detail-keys.svg" alt="hotel-key" width={75} height={154.27} className="mx-auto"/>
+                <Image src="/Vectors/Detail-keys.svg" alt="hotel-key" width={75} height={154.27} className="mx-auto"/>
                 <p className={`${simonetta.className} text-black font-normal text-[24px] text-center`}>Con mucho cariño, compartimos opciones de hospedaje para nuestros invitados que viajan desde lejos </p>
             </div>
             <div className="w-full flex flex-row justify-between gap-[24px] my-[24px]">
@@ -60,12 +60,12 @@ export default function HotelCard(){
                     className="w-full flex flex-col justify-center items-center gap-[16px]  relative">
                         <h2 className={`${tangerine.className} font-extrabold text-center text-[36px] text-red-brown`}>{info.name}</h2>
                         <div className="w-full flex flex-row justify-items-start items-center gap-[16px]">
-                            <img src="/Vectors/Icon-location.svg" alt="" />
+                            <Image src="/Vectors/Icon-location.svg" alt="" />
                             <p className={`${simonetta.className} text-[24px] font-normal text-black`}>{info.location}</p>
                         </div>
 
                         <div className="w-full flex flex-row justify-items-start items-center gap-[16px]">
-                            <img src="/Vectors/Icon-phone.svg" alt="" />
+                            <Image src="/Vectors/Icon-phone.svg" alt="" />
                             <p className={`${simonetta.className} text-[24px]  font-normal text-black`}>{info.phone}</p>
                         </div>
 
@@ -94,7 +94,7 @@ export default function HotelCard(){
                            rel="noopener noreferrer"
                            > 
                             <p className={`${simonetta.className} text-[16px] font-normal text-yellow-3`} > Ir al sitio </p> 
-                             <img src="/Vectors/Icon-arrowR-yellow.svg"  alt="arrow" width={40} height={40} />
+                             <Image src="/Vectors/Icon-arrowR-yellow.svg"  alt="arrow" width={40} height={40} />
                         </a>
                     </div>
                 ))}

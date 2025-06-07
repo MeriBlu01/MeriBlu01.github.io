@@ -47,6 +47,7 @@ export default function GiftsTableCard(): JSX.Element{
     const [bankCode, setBankCode]=useState("");
     const [bankAccount, setBankAccount]=useState("");
     const [liverpoolUrl, setLiverpoolUrl] =useState("");
+    const [liverpoolNum, setLiverpoolNum] =useState("");
     const [amazonUrl, setAmazonUrl] =useState("");
     
     const linkPage = (url:string)=>{
@@ -68,6 +69,9 @@ export default function GiftsTableCard(): JSX.Element{
         const liberpoolUrlValue = process.env.NEXT_PUBLIC_LIVERPOOL_GIFT_URL;
         if (liberpoolUrlValue) setLiverpoolUrl(liberpoolUrlValue);
 
+        const liberpoolNumValue = process.env.NEXT_PUBLIC_LIVERPOOL_NUMBER;
+        if (liberpoolNumValue) setLiverpoolNum(liberpoolNumValue);
+
         const amazonUrlValue = process.env.NEXT_PUBLIC_AMAZON_GIFT_URL;
         if (amazonUrlValue) setAmazonUrl(amazonUrlValue)   
             
@@ -75,16 +79,19 @@ export default function GiftsTableCard(): JSX.Element{
 
         type GiftCards ={
             Icon: ()=>JSX.Element;
+            numberList: string
             page: string;
         }
         
         const InfoCards:GiftCards[]=[
             {
                 Icon: ()=>( <Image src="/Vectors/Logo-Liverpool.svg" alt="Liverpool" width={212.36} height={50}/>),
+                numberList: liverpoolNum,
                 page: liverpoolUrl,
             },
             {
                 Icon: ()=>( <Image src="/Vectors/Logo-amazon.svg" alt="Amazon" width={190} height={55}/>),
+                numberList: "",
                 page: amazonUrl,
             },
         
@@ -94,7 +101,7 @@ export default function GiftsTableCard(): JSX.Element{
 
         <section className="w-full bg-yellow-2 flex flex-col justify-center pt-[40px] pb-[80px]">
             <h1 className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}>Mesa de Regalos </h1>
-            <img src="/Vectors/Leafs_Form.svg" alt="leafs" width={151.48} height={75.97} className="mx-auto" />
+            <Image src="/Vectors/Leafs_Form.svg" alt="leafs" width={151.48} height={75.97} className="mx-auto" />
             <p className={`${simonetta.className} text-black font-normal text-[24px] text-center`}>Tu presencia es nuestro mejor regalo, pero si quieres tener un detalle con nosotros te damos algunas sugerencias.</p>
             <div className="w-full h-[150px] flex flex-row justify-between mt-[24px] px-[80px]">
                 <div className="w-full h-full flex flex-row ">
@@ -102,21 +109,24 @@ export default function GiftsTableCard(): JSX.Element{
                         <div 
                         key={idx}
                         className="h-full w-full flex flex-col justify-between items-center ">
-                            {elem.Icon()}
+                            {elem.Icon()}   
+                            {elem.numberList && elem.numberList.trim()!=="" &&(
+                                <p className={`${simonetta.className} text-black font-normal text-[20px] text-start`}> <span className= "font-semibold" > No. Evento</span> {elem.numberList}</p>
+                            )} 
                             <GreenButton btnText="Ingresar" onClick={()=>linkPage(elem.page)}/>
                         </div>
                     ))}
                 </div>
                 <div className="w-full h-full flex flex-row justify-between">
                     <div className="w-full h-full flex flex-col justify-between items-center gap-[24px]">
-                        <img src="/Vectors/Logo-Santander.svg" alt="Santander" width={230} height={60} />
+                        <Image src="/Vectors/Logo-Santander.svg" alt="Santander" width={230} height={60} />
                         <InfoBankCard 
                         name={prettyName(hostName)} 
                         code={suitCode(bankCode)}
                         account={bankAccount}/>
                     </div>
                     <div className="w-full h-full flex flex-col items-center">
-                         <img src="/Vectors/Logo-evelope.svg" alt="evelop" width={150} height={160} />
+                         <Image src="/Vectors/Logo-evelope.svg" alt="evelop" width={150} height={160} />
                          <p className={`${simonetta.className} text-[24px] font-bold text-yellow-4`}>LLuvia de Sobres</p>
                     </div>
 
