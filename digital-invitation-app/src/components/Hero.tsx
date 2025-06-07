@@ -21,9 +21,9 @@ export default function Hero() {
         />
       </div>
 
-      <div className="absolute flex flex-col justify-center w-3/4 left-1/2 transform -translate-x-1/2 top-[50vh]">
+      <div className="absolute flex flex-col justify-center w-3/4 left-1/2 transform -translate-x-1/2 top-1/3 md:top-[50vh]">
         {/* Text Overlay */}
-        <div className="relative w-full flex flex-col items-center justify-start -space-y-5 md:-space-y-15 text-white text-center">
+        <div className="relative w-full flex flex-col items-center justify-start -space-y-5 md:-space-y-17 text-white text-center">
           {/* Header Overlay */}
           <h1
             className={`${tangerine.className} text-6xl font-bold md:text-7xl lg:text-9xl flex flex-col md:flex-row gap-x-2 md:gap-x-4`}
