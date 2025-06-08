@@ -1,12 +1,27 @@
 "use client"; // Required only if you're using Next.js App Router
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Image from "next/image";
 import { tangerine } from "@/lib/fonts";
 import CoverLeafDivider from "@/components/CoverLeafDivider";
 
 export default function Hero() {
   const [active, setActive] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const toggleMusic = () => {
+    setActive((prev) => {
+      const next = !prev;
+      if (audioRef.current) {
+        if (next) {
+          audioRef.current.play();
+        } else {
+          audioRef.current.pause();
+        }
+      }
+      return next;
+    });
+  };
 
   return (
     <div className="relative w-full h-dvh flex flex-col">
@@ -45,10 +60,10 @@ export default function Hero() {
         </p>
       </div>
 
-      {/* Music Icon Button */}
+      {/* Music Toggle Button */}
       <div className="absolute bottom-4 right-4 size-12 md:size-16">
         <button
-          onClick={() => setActive((prev) => !prev)}
+          onClick={toggleMusic}
           className={`relative group rounded-lg transition duration-300
             ${active ? "bg-white/90" : "bg-white/70 hover:bg-white/90"}`}
         >
@@ -63,6 +78,9 @@ export default function Hero() {
           </div>
         </button>
       </div>
+
+      {/* Hidden Audio Element */}
+      <audio ref={audioRef} src="/Audio/relaxing-piano-music-272714.mp3" loop />
     </div>
   );
 }
