@@ -61,4 +61,5 @@ npx tailwindcss init -p // This time was not needed since the postcss.config.mjs
     npm install -g vercel
     npm uninstall -g vercel
 
-
+* Animate Documentation --------------------
+https://animate.style/#documentation

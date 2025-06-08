@@ -26,6 +26,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Custom Colors Variables */
 :root {
   --color-yellow-1: #fbfaf7;
   --color-yellow-2: #f4f2eb;
@@ -40,6 +41,7 @@ body {
   --color-neutral: #fcf9f7;
 }
 
+/* Text Effects */
 .text-glow-gold {
   text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
 }
@@ -49,6 +51,7 @@ body {
     0 0 30px rgba(255, 215, 0, 0.2);
 }
 
+/* Background Colors */
 .bg-yellow-1 {
   background-color: var(--color-yellow-1);
 }
@@ -89,6 +92,7 @@ body {
   background-color: var(--color-neutral);
 }
 
+/* Hover Effects */
 @layer utilities {
   .hover\:bg-moon-mist:hover {
     background-color: var(--color-moon-mist);
@@ -101,6 +105,7 @@ body {
   }
 }
 
+/* Text Colors */
 .text-yellow-2 {
   color: var(--color-yellow-2);
 }
@@ -121,6 +126,7 @@ body {
   color: var(--color-red-brown);
 }
 
+/* Border Colors */
 .border-yellow-3 {
   border-color: var(--color-yellow-3);
   border-width: 2px;
@@ -142,10 +148,77 @@ body {
   }
 }
 
+/* Customizing Element Templates */
 .invitation-background {
   background-image: url("/Vectors/Detail-frame-left.svg"),
     url("/Vectors/Detail-frame-right.svg");
   background-repeat: no-repeat, no-repeat;
   background-position: left center, right center;
   background-size: contain, contain;
+}
+/* Animation Variables */
+:root {
+  --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-slide-in-left: slideInLeft 0.5s ease-out;
+  --animate-fade-in: fadeIn 1s ease-out infinite;
+  --animate-zoom-in: zoomIn 1s ease-in-out;
+}
+
+/* Customizing Animations */
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+.animate-wiggle {
+  animation: var(--animate-wiggle);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: var(--animate-fade-in);
+  animation-fill-mode: both; /* Keeps the final state */
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-left {
+  animation: var(--animate-slide-in-left);
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-zoom-in {
+  animation: var(--animate-zoom-in);
 }

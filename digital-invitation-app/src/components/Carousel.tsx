@@ -24,7 +24,10 @@ export default function Carousel() {
     },
     breakpoints: {
       "(max-width: 768px)": {
-        slides: { perView: 1 },
+        slides: {
+          perView: 1,
+          spacing: 3,
+        },
       },
     },
   });
