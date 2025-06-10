@@ -35,7 +35,7 @@ export default function NavBar():JSX.Element{
                     </a>
                     
                     <button onClick={()=>setIsOpen(!isOpen)}
-                        className="hover:bg-[#FBFAF7]">
+                        className="hover:bg-[#FBFAF7] active:bg-[#FBFAF7]">
                         <Image src="/Vectors/Icon-Menu-green.svg" alt="Menu" width={24} height={24}/>
                     </button>
                 </div>
@@ -56,14 +56,14 @@ export default function NavBar():JSX.Element{
             </nav>
             {/*Menu desplegable*/}
             {isOpen && (
-                <div className="lg:hidden flex flex-col items-stat px-4 pb-4 border-[#4A4700] border-t">
+                <div className="lg:hidden flex flex-col px-4 pb-4 border-[#4A4700] border-t">
                      {/*<p  className={`${simonetta.className} text-[24px] text-yellow-2 bg-yellow-4 px-[16px] rounded`} >Menu</p> */}
                     {links.map((link, idx)=>(
                         <a
                             key={idx}
                             href={link.href}
                             onClick={()=>setIsOpen(false)}
-                            className={`${simonetta.className} flex flex-row gap-4 text-[24px] text-[#4A4700] px-[16px] hover:rounded hover:bg-[#927a20] hover:text-[#F4F2EB] transition-colors`}
+                            className={`${simonetta.className} flex flex-row gap-4 text-[24px] text-[#4A4700] px-[16px] active:rounded active:bg-[#927a20] active:text-[#F4F2EB] transition-colors`}
                             >
                                 {link.Icon()}
                                 {link.label}
