@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { simonetta } from "@/lib/fonts";
 import { tangerine } from "@/lib/fonts";
@@ -7,6 +8,13 @@ import CustomDropdown from "@/components/CustomDropdown";
 import GreenButton from "./Buttons";
 
 export default function Form() {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [guestsNumber, setGuestsNumber] = useState("1");
+  const [attendance, setAttendance] = useState("");
+  const [allergy, setAllergy] = useState("");
+  const [allergyList, setAllergyList] = useState("");
+
   const handleChange = (value: string) => {
     console.log("Selected:", value);
   };

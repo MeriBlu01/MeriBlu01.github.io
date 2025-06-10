@@ -118,6 +118,18 @@ NEXT_PUBLIC_SANTANDER_CODE_NUMBER=012345678901234567
 NEXT_PUBLIC_SANTANDER_ACCOUNT_NUMBER=12345678901
 ```
 
+---
+
+## Airtable API for 'Wedding RSVPs' base
+
+- API Guide for [Wedding RSVPs](https://airtable.com/app2JIqG8iCFMvMbG/api/docs#curl/introduction) base
+
+- Community-built API clients: [airtable.js](https://github.com/Airtable/airtable.js)
+
+- [Graphical Airtable interface](https://airtable.com/app2JIqG8iCFMvMbG/tblTEj2ByztHryp67/viwSyiZAGiOct4rj1?blocks=hide) for 'Wedding RSVPs' base
+
+---
+
 ## Best Practices Followed
 
 - Keep components **small** and **reusable**

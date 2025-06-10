@@ -55,6 +55,7 @@ npx tailwindcss init -p // This time was not needed since the postcss.config.mjs
 -> npm install @heroicons/react
     import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"; (lighter)
 
+-> npm install axios
 
 * Vercel -----------------------------------
 # Install Vercel CLI
@@ -63,3 +64,7 @@ npx tailwindcss init -p // This time was not needed since the postcss.config.mjs
 
 * Animate Documentation --------------------
 https://animate.style/#documentation
+
+* Airtable DB ------------------------------
+    -> Installation: npm install airtable
+    -> https://airtable.com/developers/web/api/introduction
