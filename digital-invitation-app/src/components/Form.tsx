@@ -147,8 +147,7 @@ export default function Form() {
           >
             Enviar
           </button> */}
-          <GreenButton btnText="Enviar"/>
-
+          <GreenButton btnText="Enviar" />
         </div>
       </form>
     </section>

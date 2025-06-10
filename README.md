@@ -89,9 +89,10 @@ Example: An image stored at `/public/hero.png` can be accessed via `https://your
 
 ## Environment Variables (.env.local)
 
-This project uses a .env.local file to store sensitive information and personalized links related to the gift registry. These variables are accessed from the frontend using the NEXT_PUBLIC_ prefix.
+This project uses a .env.local file to store sensitive information and personalized links related to the gift registry. These variables are accessed from the frontend using the NEXT*PUBLIC* prefix.
 
 ### Gift Registry Links
+
 External gift registry links were configured for the following platforms:
 
 -NEXT_PUBLIC_LIVERPOOL_GIFT_URL – Link to the gift registry on Liverpool
@@ -99,6 +100,7 @@ External gift registry links were configured for the following platforms:
 -NEXT_PUBLIC_AMAZON_GIFT_URL – Link to the gift registry on Amazon
 
 ### Bank Account Details (Bank)
+
 Bank account details were also included for anyone who wishes to make a deposit:
 
 -NEXT_PUBLIC_BANK_NAME – Name of the account holder
@@ -113,7 +115,7 @@ NEXT_PUBLIC_LIVERPOOL_NUMBER=12345678
 NEXT_PUBLIC_AMAZON_GIFT_URL=https://www.amazon.com.mx/hz/wishlist/ls/XXXXXXXXXXX
 NEXT_PUBLIC_SANTANDER_NAME=AccountHolderName
 NEXT_PUBLIC_SANTANDER_CODE_NUMBER=012345678901234567
-NEXT_PUBLIC_SANTANDER_ACCOUNT_NUMBER=12345678901 
+NEXT_PUBLIC_SANTANDER_ACCOUNT_NUMBER=12345678901
 ```
 
 ## Best Practices Followed
@@ -122,3 +124,7 @@ NEXT_PUBLIC_SANTANDER_ACCOUNT_NUMBER=12345678901
 - Keep logic out of UI components (place it in `/lib`)
 - Organize routes clearly in `/app`
 - Store only static, public assets in `/public`
+
+## Licenses
+
+Music by [Clavier Clavier](https://pixabay.com/es/users/clavier-music-16027823/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=272714) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=272714)

@@ -32,9 +32,11 @@ export default function TimeAndLocation() {
           Te esperamos el día:
         </p>
         <p
-          className={`${tangerine.className} font-bold text-red-brown text-[38px] md:text-[48px]`}
+          className={`${tangerine.className} font-bold text-red-brown text-[38px] md:text-[48px] flex flex-col md:flex-row gap-x-2 md:gap-x-4`}
         >
-          06 de Diciembre 2025 - 06:00 p.m.*
+          <span>06 de Diciembre 2025</span>
+          <span className="hidden md:block"> - </span>
+          <span className="text-[36px] md:text-[48px]">06:00 p.m.*</span>
         </p>
         <div className="relative w-9/10 md:w-2/5 aspect-[400/300] flex flex-col justify-center items-center">
           <iframe
