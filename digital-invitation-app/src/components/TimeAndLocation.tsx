@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function TimeAndLocation() {
   return (
-    <div className="w-full h-fit p-5 md:p-20 flex flex-col justify-center items-center gap-y-10">
+    <div id="location" className="w-full h-fit p-5 md:p-20 flex flex-col justify-center items-center gap-y-10">
       <div className="relative w-1/2 md:w-1/6 aspect-[200/125] flex justify-center items-center">
         <Image
           src="/Vectors/Detail-chapel.svg"

@@ -5,8 +5,7 @@ import Image from "next/image";
 
 export default function Invitation() {
   return (
-    <section className="w-full sm:px-[16px] lg:px-[80px]">
-
+    <section id="invitation" className=" scroll-mt-[50px] w-full sm:px-[16px] lg:px-[80px] max-w-[1730px] mx-auto">
       <div className="bg-yellow-2 w-full h-fit lg:p-[42] gap-[16px] flex flex-col justify-center rounded-[16px] invitation-background">
         <div className="w-full lg:px-[80px] flex flex-col justify-center">
           <h1 className={`${tangerine.className} font-extrabold text-yellow-4 text-[48px] text-center`}>¡Nos casamos! </h1>

@@ -99,37 +99,39 @@ export default function GiftsTableCard(): JSX.Element{
 
         return (
 
-        <section className="w-full bg-yellow-2 flex flex-col justify-center pt-[40px] pb-[80px]">
-            <h1 className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}>Mesa de Regalos </h1>
-            <Image src="/Vectors/Leafs_Form.svg" alt="leafs" width={151.48} height={75.97} className="mx-auto" />
-            <p className={`${simonetta.className} text-black font-normal text-[24px] text-center`}>Tu presencia es nuestro mejor regalo, pero si quieres tener un detalle con nosotros te damos algunas sugerencias.</p>
-            <div className="w-full h-[150px] flex flex-row justify-between mt-[24px] px-[80px]">
-                <div className="w-full h-full flex flex-row ">
-                    {InfoCards.map((elem, idx)=>(        
-                        <div 
-                        key={idx}
-                        className="h-full w-full flex flex-col justify-between items-center ">
-                            {elem.Icon()}   
-                            {elem.numberList && elem.numberList.trim()!=="" &&(
-                                <p className={`${simonetta.className} text-black font-normal text-[20px] text-start`}> <span className= "font-semibold" > No. Evento</span> {elem.numberList}</p>
-                            )} 
-                            <GreenButton btnText="Ingresar" onClick={()=>linkPage(elem.page)}/>
+        <section id="gifts" className="scroll-mt-[50px] w-full bg-yellow-2  ">
+            <div className="w-full flex flex-col justify-center pt-[40px] pb-[80px] max-w-[1730px] mx-auto">
+                <h1 className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}>Mesa de Regalos </h1>
+                <Image src="/Vectors/Leafs_Form.svg" alt="leafs" width={151.48} height={75.97} className="mx-auto" />
+                <p className={`${simonetta.className} text-black font-normal text-[24px] text-center`}>Tu presencia es nuestro mejor regalo, pero si quieres tener un detalle con nosotros te damos algunas sugerencias.</p>
+                <div className="w-full h-[150px] flex flex-row justify-between mt-[24px] px-[80px]">
+                    <div className="w-full h-full flex flex-row ">
+                        {InfoCards.map((elem, idx)=>(        
+                            <div 
+                            key={idx}
+                            className="h-full w-full flex flex-col justify-between items-center ">
+                                {elem.Icon()}   
+                                {elem.numberList && elem.numberList.trim()!=="" &&(
+                                    <p className={`${simonetta.className} text-black font-normal text-[20px] text-start`}> <span className= "font-semibold" > No. Evento</span> {elem.numberList}</p>
+                                )} 
+                                <GreenButton btnText="Ingresar" onClick={()=>linkPage(elem.page)}/>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="w-full h-full flex flex-row justify-between">
+                        <div className="w-full h-full flex flex-col justify-between items-center gap-[24px]">
+                            <Image src="/Vectors/Logo-Santander.svg" alt="Santander" width={230} height={60} />
+                            <InfoBankCard 
+                            name={prettyName(hostName)} 
+                            code={suitCode(bankCode)}
+                            account={bankAccount}/>
                         </div>
-                    ))}
-                </div>
-                <div className="w-full h-full flex flex-row justify-between">
-                    <div className="w-full h-full flex flex-col justify-between items-center gap-[24px]">
-                        <Image src="/Vectors/Logo-Santander.svg" alt="Santander" width={230} height={60} />
-                        <InfoBankCard 
-                        name={prettyName(hostName)} 
-                        code={suitCode(bankCode)}
-                        account={bankAccount}/>
-                    </div>
-                    <div className="w-full h-full flex flex-col items-center">
-                         <Image src="/Vectors/Logo-evelope.svg" alt="evelop" width={150} height={160} />
-                         <p className={`${simonetta.className} text-[24px] font-bold text-yellow-4`}>LLuvia de Sobres</p>
-                    </div>
+                        <div className="w-full h-full flex flex-col items-center">
+                            <Image src="/Vectors/Logo-evelope.svg" alt="evelop" width={150} height={160} />
+                            <p className={`${simonetta.className} text-[24px] font-bold text-yellow-4`}>LLuvia de Sobres</p>
+                        </div>
 
+                    </div>
                 </div>
             </div>
 

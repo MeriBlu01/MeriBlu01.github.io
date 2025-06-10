@@ -15,7 +15,7 @@ import GiftsTableCard from "@/components/GiftsTableCard";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center w-full bg-yellow-1">
+    <main className="flex flex-col items-center w-full bg-yellow-1 scroll-smooth">
       {/* Invitation Cover Section */}
       <Hero />
       <NavBar />

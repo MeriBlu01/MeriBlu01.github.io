@@ -24,8 +24,8 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-full h-dvh flex flex-col">
-      <div className="h-full aspect-[5861/3907]">
+    <div id="hero" className="relative w-full h-dvh flex flex-col">
+      <div className="relative h-full aspect-[5861/3907]">
         {/* Background Image */}
         <Image
           src="/Images/cover.png"

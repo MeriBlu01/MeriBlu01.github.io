@@ -39,7 +39,7 @@ const textIcons: DressClothes[] = [
 
 export default function DressCode(): JSX.Element {
   return (
-    <section className="w-full flex flex-col justify-center sm:px-[16px] lg:px-[80px] py-[24px] gap-[32px]">
+    <section id="dressCode" className="scroll-mt-[50px] w-full flex flex-col justify-center sm:px-[16px] lg:px-[80px] py-[24px] gap-[32px] max-w-[1730px] mx-auto ">
       <div className="w-full flex flex-col justify-center gap-0-">
         <h1
           className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}
