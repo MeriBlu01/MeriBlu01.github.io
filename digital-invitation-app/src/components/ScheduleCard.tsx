@@ -49,19 +49,22 @@ const titleIcons: ScheduleIcon[]=[
 
 export default function Schedule(): JSX.Element{
     return(
-        <section className="w-full flex flex-col justify-center lg:px-[80px] py-[32px] bg-yellow-2 gap-0">
-            <h1 className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}>Itinerario</h1>
-            <Image src="/Vectors/Detail-flower.svg" alt="flower" width={151.48} height={75.97} className="mx-auto" />
-            <div className="flex flex-row justify-between ">
-                {titleIcons.map((element, index)=>(
-                    <div 
-                    key={index}
-                    className="flex flex-col justify-end items-center gap-1 ">
-                        {element.Icon()}
-                        <p className={`${tangerine.className} text-black font-black text-[30px]`}>{element.title}</p>
-                        <p className={`${simonetta.className} text-yellow-4 font-medium text-[20px]`}>{element.hour}</p>
-                    </div>
-                ))}
+        <section id="itinerary" className=" scroll-mt-[50px] w-full bg-yellow-2 gap-0 ">
+            <div className="w-full flex flex-col justify-center lg:px-[80px] py-[32px]  max-w-[1730px] mx-auto">
+
+                <h1 className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}>Itinerario</h1>
+                <Image src="/Vectors/Detail-flower.svg" alt="flower" width={151.48} height={75.97} className="mx-auto" />
+                <div className="flex flex-row justify-between ">
+                    {titleIcons.map((element, index)=>(
+                        <div 
+                        key={index}
+                        className="flex flex-col justify-end items-center gap-1 ">
+                            {element.Icon()}
+                            <p className={`${tangerine.className} text-black font-black text-[30px]`}>{element.title}</p>
+                            <p className={`${simonetta.className} text-yellow-4 font-medium text-[20px]`}>{element.hour}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     )

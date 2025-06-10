@@ -12,7 +12,7 @@ export default function Form() {
   };
 
   return (
-    <section className="bg-yellow-2 w-full h-fit p-4 md:p-15 space-y-14">
+    <section id="confirmation" className="scroll-mt-[50px] bg-yellow-2 w-full h-fit p-4 md:p-15 space-y-14">
       {/* Confirm Attendance Header */}
       <div className="flex flex-col justify-center items-center -space-y-3 w-fit mx-auto">
         <h1

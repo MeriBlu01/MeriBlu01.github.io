@@ -47,11 +47,11 @@ export default function HotelCard(){
     }
 
     return (
-        <section className="w-full lg:px-[80px]">
-            <div className="w-full flex flex-col justify-center">
+        <section id="lodging" className="scroll-mt-[50px] w-full lg:px-[80px] max-w-[1730px] mx-auto">
+            <div  className="w-full flex flex-col justify-center">
                 <h1 className={`${tangerine.className} font-extrabold text-center text-[48px] text-yellow-4`}>Hospedaje</h1>
                 <Image src="/Vectors/Detail-keys.svg" alt="hotel-key" width={75} height={154.27} className="mx-auto"/>
-                <p className={`${simonetta.className} text-black font-normal text-[24px] text-center`}>Con mucho cariño, compartimos opciones de hospedaje para nuestros invitados que viajan desde lejos </p>
+                <p className={`${simonetta.className} text-black font-normal text-[24px] text-center mt-[24px]`}>Con mucho cariño, compartimos opciones de hospedaje para nuestros invitados que viajan desde lejos </p>
             </div>
             <div className="w-full flex flex-row justify-between gap-[24px] my-[24px]">
                 {InfoHotel.map((info)=>(

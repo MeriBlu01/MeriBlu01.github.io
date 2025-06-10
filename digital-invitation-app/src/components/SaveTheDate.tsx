@@ -3,7 +3,7 @@ import CountdownTimer from "@/components/CountdownTimer";
 
 export default function SaveTheDate() {
   return (
-    <div className="w-5/6 h-9/10 md:w-3/5 md:h-4/5 flex justify-between items-center">
+    <div className="w-5/6 h-9/10 md:w-3/5 md:h-4/5 flex justify-between items-center ">
       {/* Left Leaves Frame */}
       <div className="relative w-1/4 md:w-1/6 h-4/5">
         <Image
