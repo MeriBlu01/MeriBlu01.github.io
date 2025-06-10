@@ -9,7 +9,7 @@ export default function Hero() {
   const [active, setActive] = useState(false);
 
   return (
-    <div className="relative w-full h-dvh flex flex-col">
+    <div id="hero" className="relative w-full h-dvh flex flex-col">
       <div className="relative h-full aspect-[5861/3907]">
         {/* Background Image */}
         <Image
