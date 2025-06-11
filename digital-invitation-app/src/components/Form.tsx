@@ -10,17 +10,85 @@ import GreenButton from "./Buttons";
 export default function Form() {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
-  const [guestsNumber, setGuestsNumber] = useState("1");
+  const [guestsNumber, setGuestsNumber] = useState<number>(1);
   const [attendance, setAttendance] = useState("");
-  const [allergy, setAllergy] = useState("");
+  const [allergy, setAllergy] = useState("No");
   const [allergyList, setAllergyList] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleChange = (value: string) => {
-    console.log("Selected:", value);
+  const handleGuestsChange = (value: string) => {
+    setGuestsNumber(parseInt(value));
+  };
+
+  const handleAttendanceChange = (value: string) => {
+    const mapped = value === "Sí, asistiré" ? "Si" : "No";
+    setAttendance(mapped);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    if (!attendance || attendance === "Confirmación de asistencia") {
+      alert("Por favor confirma tu asistencia.");
+      return;
+    }
+
+    if (allergy === "Si") {
+      alert("Por favor indique sus alergias alimentarias.");
+      return;
+    }
+
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitSuccess(null);
+    setSubmitError(null);
+
+    const payload = {
+      name: name,
+      phone: phone, // optional
+      guestsNumber: guestsNumber,
+      attendanceResponse: attendance,
+      allergiesResponse: allergy,
+      allergiesList: allergyList,
+      message, // optional
+    };
+
+    try {
+      const res = await fetch("/api/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Error al enviar el formulario.");
+      }
+
+      setSubmitSuccess("¡Formulario enviado con éxito!");
+      setName("");
+      setPhone("");
+      setGuestsNumber(1);
+      setAttendance("");
+      setAllergy("No");
+      setAllergyList("");
+      setMessage("");
+    } catch (error: any) {
+      setSubmitError(error.message);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
-    <section id="confirmation" className="scroll-mt-[50px] bg-yellow-2 w-full h-fit p-4 md:p-15 space-y-14">
+    <section
+      id="confirmation"
+      className="scroll-mt-[50px] bg-yellow-2 w-full h-fit p-4 md:p-15 space-y-14"
+    >
       {/* Confirm Attendance Header */}
       <div className="flex flex-col justify-center items-center -space-y-3 w-fit mx-auto">
         <h1
@@ -55,11 +123,7 @@ export default function Form() {
       {/* Guest Form */}
       <form
         className={`${simonetta.className} w-full max-w-md mx-auto space-y-6`}
-        onSubmit={(e) => {
-          e.preventDefault();
-          // Add your submit logic here
-          console.log("Form submitted");
-        }}
+        onSubmit={handleSubmit}
       >
         {/* Full Name */}
         <div>
@@ -71,6 +135,8 @@ export default function Form() {
             id="name"
             name="name"
             required
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="w-full border border-yellow-4 bg-neutral p-3 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-4"
           />
         </div>
@@ -84,7 +150,8 @@ export default function Form() {
             type="tel"
             id="phone"
             name="phone"
-            required
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             className="w-full border border-yellow-4 bg-neutral p-3 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-4"
           />
         </div>
@@ -92,12 +159,12 @@ export default function Form() {
         <CustomDropdown
           options={["1", "2", "3", "4"]}
           initial="Número de invitados"
-          onChange={handleChange}
+          onChange={handleGuestsChange}
         />
         <CustomDropdown
           options={["Sí, asistiré", "No, no podré asistir"]}
           initial="Confirmación de asistencia"
-          onChange={handleChange}
+          onChange={handleAttendanceChange}
         />
 
         {/* Congratulatory Messagee */}
@@ -112,6 +179,8 @@ export default function Form() {
             id="message"
             name="message"
             rows={5}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             className="w-full border border-yellow-4 bg-neutral p-6 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-4 resize-none"
           />
         </div>
@@ -124,7 +193,9 @@ export default function Form() {
               <input
                 type="radio"
                 name="allergy"
-                value="yes"
+                value="Yes"
+                checked={allergy === "Si"}
+                onChange={() => setAllergy("Si")}
                 className="accent-yellow-400 size-[20px]"
               />
               Sí, padezco de alergias
@@ -133,7 +204,9 @@ export default function Form() {
               <input
                 type="radio"
                 name="allergy"
-                value="no"
+                value="No"
+                checked={allergy === "No"}
+                onChange={() => setAllergy("No")}
                 className="accent-yellow-400 size-[20px]"
               />
               No, no tengo alergias
@@ -144,18 +217,15 @@ export default function Form() {
             type="text"
             placeholder="Escribe aquí tus alergias alimentarias"
             className="w-full border border-yellow-4 bg-neutral p-3 rounded-sm focus:outline-none focus:ring-2 focus:ring-[#4A4A00]"
+            value={allergyList}
+            onChange={(e) => setAllergyList(e.target.value)}
+            disabled={allergy === "No"}
           />
         </div>
 
         {/* Submit Button */}
         <div className="flex justify-center pb-[50px]">
-          {/*<button
-            type="submit"
-            className="bg-yellow-4 hover:bg-amber-500 transition-colors text-white px-6 py-3 rounded-md mt-6"
-          >
-            Enviar
-          </button> */}
-          <GreenButton btnText="Enviar" />
+          <GreenButton btnText="Enviar" type="submit" />
         </div>
       </form>
     </section>

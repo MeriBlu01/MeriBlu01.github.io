@@ -9,24 +9,19 @@ const POST_API_ENDPOINT = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIR
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    console.log("Received form data:", body);
 
     const {
       name,
       phone,
       guestsNumber,
-      attendanceBool,
-      allergiesBool,
+      attendanceResponse,
+      allergiesResponse,
       allergiesList,
+      message,
     } = body;
 
-    if (
-      !name ||
-      !phone ||
-      !guestsNumber ||
-      !attendanceBool ||
-      !allergiesBool ||
-      !allergiesList
-    ) {
+    if (!name || !guestsNumber || !attendanceResponse || !allergiesResponse) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 }
@@ -41,10 +36,11 @@ export async function POST(req: NextRequest) {
             fields: {
               Name: name,
               "Phone Number": phone,
-              "Number of Guests": guestsNumber || 1,
-              Attendance: attendanceBool,
-              Allergies: allergiesBool || "No",
+              "Number of Guests": guestsNumber,
+              Attendance: attendanceResponse,
+              Allergies: allergiesResponse || "No",
               "Allergies List": allergiesList || "",
+              Message: message || "",
             },
           },
         ],
@@ -62,7 +58,11 @@ export async function POST(req: NextRequest) {
       { status: 200 }
     );
   } catch (error: any) {
-    console.error("Error submitting RSVP:", error.message);
+    console.error(
+      "Error submitting RSVP:",
+      error instanceof Error ? error.message : error
+    );
+    console.error("Error in POST handler:", error);
     return NextResponse.json(
       { error: "Something went wrong" },
       { status: 500 }
