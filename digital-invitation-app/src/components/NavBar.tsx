@@ -35,8 +35,8 @@ export default function NavBar():JSX.Element{
                     </a>
                     
                     <button onClick={()=>setIsOpen(!isOpen)}
-                        className="hover:bg-[#FBFAF7] active:bg-[#FBFAF7]">
-                        <Image src="/Vectors/Icon-Menu-green.svg" alt="Menu" width={24} height={24}/>
+                        className="px-[8px] rounded hover:bg-[#b7b699] active:bg-[#b7b699]">
+                        <Image src="/Vectors/Icon-Menu-green.svg" alt="Menu" width={30} height={30}/>
                     </button>
                 </div>
                 {/*pantallas grandes */}
@@ -63,7 +63,7 @@ export default function NavBar():JSX.Element{
                             key={idx}
                             href={link.href}
                             onClick={()=>setIsOpen(false)}
-                            className={`${simonetta.className} flex flex-row gap-4 text-[24px] text-[#4A4700] px-[16px] active:rounded active:bg-[#927a20] active:text-[#F4F2EB] transition-colors`}
+                            className={`${simonetta.className} flex flex-row gap-4 text-[24px] text-[#2c2200] px-[16px] active:rounded active:bg-[#b7b699] transition-colors`}
                             >
                                 {link.Icon()}
                                 {link.label}
