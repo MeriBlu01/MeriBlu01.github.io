@@ -41,7 +41,7 @@ export default function Form() {
     const errors: string[] = [];
 
     if (!attendance || attendance === "Confirmación de asistencia") {
-      errors.push("Por favor confirma tu asistencia.");
+      errors.push("Por favor confirme su asistencia.");
     }
 
     if (allergy === "Si" && !allergyList.trim()) {
@@ -175,12 +175,18 @@ export default function Form() {
         <CustomDropdown
           options={["1", "2", "3", "4"]}
           initial="Número de invitados"
+          value={guestsNumber.toString()}
           onChange={handleGuestsChange}
+          labelTemplate={(val) => `${val} invitado(s)`}
         />
         <CustomDropdown
           options={["Sí, asistiré", "No, no podré asistir"]}
           initial="Confirmación de asistencia"
+          value={attendance}
           onChange={handleAttendanceChange}
+          labelTemplate={(val) =>
+            val === "Si" ? `Sí, asistiré` : `${val}, no podré asistir`
+          }
         />
 
         {/* Congratulatory Messagee */}

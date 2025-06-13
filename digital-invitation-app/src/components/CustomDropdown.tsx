@@ -6,13 +6,19 @@ import { ChevronDown } from "lucide-react";
 type DropdownProps = {
   options: string[];
   initial: string;
+  value: string | null;
   onChange?: (value: string) => void;
+  labelTemplate?: (value: string) => string;
+  toggleButtonType?: "button" | "submit" | "reset";
 };
 
 export default function CustomDropdown({
   options,
   initial,
+  value,
   onChange,
+  labelTemplate,
+  toggleButtonType = "button",
 }: DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null); // <- ref to wrapper
@@ -42,6 +48,7 @@ export default function CustomDropdown({
   return (
     <div ref={dropdownRef} className="relative w-full">
       <button
+        type={toggleButtonType}
         onClick={() => setIsOpen(!isOpen)}
         className="bg-yellow-4 text-white px-6 py-3 w-full rounded-md flex justify-between items-center text-lg"
       >
@@ -61,6 +68,13 @@ export default function CustomDropdown({
             </li>
           ))}
         </ul>
+      )}
+
+      {/* Show selection below the dropdown */}
+      {value && (
+        <div className="mt-2 text-lg text-red-brown">
+          {labelTemplate?.(value) ?? value}
+        </div>
       )}
     </div>
   );
