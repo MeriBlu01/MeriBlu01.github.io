@@ -43,11 +43,16 @@ body {
 
 /* Text Effects */
 .text-glow-gold {
-  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+  text-shadow:
+    0 0 10px #ffd700,
+    0 0 20px #ffd700,
+    0 0 30px #ffd700;
 }
 
 .text-light-glow-gold {
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.4),
+  text-shadow:
+    0 0 10px rgba(255, 215, 0, 0.6),
+    0 0 20px rgba(255, 215, 0, 0.4),
     0 0 30px rgba(255, 215, 0, 0.2);
 }
 
@@ -150,12 +155,16 @@ body {
 
 /* Customizing Element Templates */
 .invitation-background {
-  background-image: url("/Vectors/Detail-frame-left.svg"),
-    url("/Vectors/Detail-frame-right.svg");
+  background-image: url("/Vectors/Detail-frame-left.svg"), url("/Vectors/Detail-frame-right.svg");
   background-repeat: no-repeat, no-repeat;
-  background-position: left center, right center;
-  background-size: contain, contain;
+  background-position:
+    left top,
+    right bottom;
+  background-size:
+    auto 340px,
+    auto 340px;
 }
+
 /* Animation Variables */
 :root {
   --animate-wiggle: wiggle 1s ease-in-out infinite;
@@ -221,4 +230,54 @@ body {
 
 .animate-zoom-in {
   animation: var(--animate-zoom-in);
+}
+
+@media (min-width: 640px) {
+  .invitation-background {
+    background-image: url("/Vectors/Detail-frame-left.svg"), url("/Vectors/Detail-frame-right.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      left top,
+      right bottom;
+    background-size:
+      auto 360px,
+      auto 360px;
+  }
+}
+
+@media (min-width: 768px) {
+  .invitation-background {
+    background-image: url("/Vectors/Detail-frame-left.svg"), url("/Vectors/Detail-frame-right.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      left top,
+      right bottom;
+    background-size:
+      auto 400px,
+      auto 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .invitation-background {
+    background-image: url("/Vectors/Detail-frame-left.svg"), url("/Vectors/Detail-frame-right.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      left top,
+      right bottom;
+    background-size:
+      auto 650px,
+      auto 650px;
+  }
+}
+
+@media (min-width: 1260px) {
+  .invitation-background {
+    background-image: url("/Vectors/Detail-frame-left.svg"), url("/Vectors/Detail-frame-right.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position:
+      left center,
+      right center;
+    background-size: contain, contain;
+  }
 }
