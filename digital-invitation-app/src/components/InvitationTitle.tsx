@@ -9,7 +9,7 @@ export default function Invitation() {
       id="invitation"
       className=" scroll-mt-[50px] w-full sm:px-[16px] lg:px-[80px] max-w-[1730px] mx-auto"
     >
-      <div className="bg-yellow-2 w-full h-fit flex flex-col justify-center rounded-[16px] md: lg:p-[42] lg:gap-[16px] invitation-background">
+      <div className="bg-yellow-2 w-full h-fit flex flex-col justify-center rounded-[16px] lg:p-[42] lg:gap-[16px] invitation-background">
         <div className="w-full lg:px-[80px] flex flex-col justify-center">
           <h1
             className={`${tangerine.className} font-extrabold text-yellow-4 text-center text-[40px] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[80px]`}
@@ -30,7 +30,7 @@ export default function Invitation() {
               Queremos compartir contigo la alegría de nuestra unión, y nos gustaría que nos
               acompañases a celebrar este momento tan especial para nosotros
             </p>
-            <div className="w-full py-[24px] gap-[8px]">
+            <div className="w-full  gap-[8px]">
               <p
                 className={`${simonetta.className} font-normal text-black text-center text-[16px] sm:text-[24px] xl:text-[32px] `}
               >
@@ -54,7 +54,7 @@ export default function Invitation() {
                 </p>
               </div>
               <p
-                className={`${tangerine.className} font-extrabold text-yellow-4 text-center text-[32px] sm:text-[40px] md:text-[56px] lg:text-[64px]`}
+                className={`${tangerine.className} font-extrabold text-yellow-4 pt-[16px] text-center text-[32px] sm:text-[40px] md:text-[56px] lg:text-[64px]`}
               >
                 ¡Te esperamos!{" "}
               </p>
