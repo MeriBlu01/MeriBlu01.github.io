@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { simonetta } from "@/lib/fonts";
 import { tangerine } from "@/lib/fonts";
@@ -18,6 +18,13 @@ export default function Form() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [formErrors, setFormErrors] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (allergy === "No") {
+      setAllergyList("");
+    }
+  }, [allergy]);
 
   const handleGuestsChange = (value: string) => {
     setGuestsNumber(parseInt(value));
@@ -29,28 +36,35 @@ export default function Form() {
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    if (!attendance || attendance === "Confirmación de asistencia") {
-      alert("Por favor confirma tu asistencia.");
-      return;
-    }
-
-    if (allergy === "Si") {
-      alert("Por favor indique sus alergias alimentarias.");
-      return;
-    }
-
     e.preventDefault();
+
+    const errors: string[] = [];
+
+    if (!attendance || attendance === "Confirmación de asistencia") {
+      errors.push("Por favor confirma tu asistencia.");
+    }
+
+    if (allergy === "Si" && !allergyList.trim()) {
+      errors.push("Por favor indique sus alergias alimentarias.");
+    }
+
+    if (errors.length > 0) {
+      setFormErrors(errors);
+      return;
+    }
+
+    setFormErrors([]);
     setIsSubmitting(true);
     setSubmitSuccess(null);
     setSubmitError(null);
 
     const payload = {
-      name: name,
+      name: name, // pre-defined
       phone: phone, // optional
-      guestsNumber: guestsNumber,
-      attendanceResponse: attendance,
-      allergiesResponse: allergy,
-      allergiesList: allergyList,
+      guestsNumber: guestsNumber, // MAX value pre-defined and required
+      attendanceResponse: attendance, // required
+      allergiesResponse: allergy, // required
+      allergiesList: allergyList, // required only if allergy is "Si"
       message, // optional
     };
 
@@ -70,6 +84,7 @@ export default function Form() {
       }
 
       setSubmitSuccess("¡Formulario enviado con éxito!");
+
       setName("");
       setPhone("");
       setGuestsNumber(1);
@@ -81,6 +96,7 @@ export default function Form() {
       setSubmitError(error.message);
     } finally {
       setIsSubmitting(false);
+      setFormErrors([]);
     }
   };
 
@@ -120,6 +136,7 @@ export default function Form() {
           tí en el pase de entrada que te hemos enviado.
         </p>
       </div>
+
       {/* Guest Form */}
       <form
         className={`${simonetta.className} w-full max-w-md mx-auto space-y-6`}
@@ -134,7 +151,6 @@ export default function Form() {
             type="text"
             id="name"
             name="name"
-            required
             value={name}
             onChange={(e) => setName(e.target.value)}
             className="w-full border border-yellow-4 bg-neutral p-3 rounded-sm focus:outline-none focus:ring-2 focus:ring-yellow-4"
@@ -222,6 +238,16 @@ export default function Form() {
             disabled={allergy === "No"}
           />
         </div>
+
+        {formErrors.length > 0 && (
+          <ul>
+            {formErrors.map((err, i) => (
+              <li key={i} style={{ color: "red" }}>
+                {err}
+              </li>
+            ))}
+          </ul>
+        )}
 
         {/* Submit Button */}
         <div className="flex justify-center pb-[50px]">
