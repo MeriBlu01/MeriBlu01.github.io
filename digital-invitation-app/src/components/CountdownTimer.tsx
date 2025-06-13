@@ -42,13 +42,13 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   }
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="w-full flex flex-col justify-center gap-1">
       <h2
-        className={`${tangerine.className} text-black tracking-wide md:tracking-normal text-center text-4xl md:text-7xl`}
+        className={`${tangerine.className} text-yellow-4 font-bold tracking-wide md:tracking-normal text-center text-[40px]  sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[80px]`}
       >
         Save the Date
       </h2>
-      <div className="absolute bottom-5 md:bottom-0 w-full h-1/2">
+      <div className="w-full h-1/2 absolute bottom-5 pt-[16px] md:pt-[8px] md:bottom-0 lg:pt-0 ">
         <div className="grid grid-cols-4 h-full">
           <CountdownBox label="Días" value={timeLeft.days} bg="bg-avocado" />
           <CountdownBox
@@ -82,9 +82,9 @@ function CountdownBox({
       <div
         className={`${simonetta.className} text-center flex flex-col gap-y-3`}
       >
-        <span className="text-black text-xl md:text-3xl">{value}</span>
+        <span className="text-black text-xl sm:text-2xl md:text-3xl">{value}</span>
         <p>
-          <span className="text-black text-base md:text-2xl">{label}</span>
+          <span className="text-black text-base sm:text-xl  md:text-2xl">{label}</span>
         </p>
       </div>
     </div>
