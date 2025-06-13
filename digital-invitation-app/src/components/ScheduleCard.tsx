@@ -142,12 +142,12 @@ export default function Schedule(): JSX.Element {
               {element.Icon()}
               <div className="w-fit h-fit flex flex-col justify-center items-center">
                 <p
-                  className={`${tangerine.className} text-black font-black text-[32px]  xl:text-[48px] `}
+                  className={`${tangerine.className} text-black font-black text-[32px] sm:text-[40px] xl:text-[48px]  `}
                 >
                   {element.title}
                 </p>
                 <p
-                  className={`${simonetta.className} text-yellow-4 font-medium text-[16px] sm:text-[24px] xl:text-[32px] pb-[26px] `}
+                  className={`${simonetta.className} text-yellow-4 font-medium text-[16px] sm:text-[24px] xl:text-[32px]pb-[26px] `}
                 >
                   {element.hour}
                 </p>
