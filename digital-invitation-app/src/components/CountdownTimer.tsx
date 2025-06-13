@@ -20,9 +20,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
     };
   };
 
-  const [timeLeft, setTimeLeft] = useState<ReturnType<
-    typeof calculateTimeLeft
-  > | null>(null);
+  const [timeLeft, setTimeLeft] = useState<ReturnType<typeof calculateTimeLeft> | null>(null);
 
   const [hasMounted, setHasMounted] = useState(false);
 
@@ -51,16 +49,8 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
       <div className="w-full h-1/2 absolute bottom-5 pt-[16px] md:pt-[8px] md:bottom-0 lg:pt-0 ">
         <div className="grid grid-cols-4 h-full">
           <CountdownBox label="Días" value={timeLeft.days} bg="bg-avocado" />
-          <CountdownBox
-            label="Horas"
-            value={timeLeft.hours}
-            bg="bg-taupe-gray"
-          />
-          <CountdownBox
-            label="Mins"
-            value={timeLeft.minutes}
-            bg="bg-moon-mist"
-          />
+          <CountdownBox label="Horas" value={timeLeft.hours} bg="bg-taupe-gray" />
+          <CountdownBox label="Mins" value={timeLeft.minutes} bg="bg-moon-mist" />
           <CountdownBox label="Segs" value={timeLeft.seconds} bg="bg-cararra" />
         </div>
       </div>
@@ -68,23 +58,13 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   );
 }
 
-function CountdownBox({
-  label,
-  value,
-  bg,
-}: {
-  label: string;
-  value: number;
-  bg: string;
-}) {
+function CountdownBox({ label, value, bg }: { label: string; value: number; bg: string }) {
   return (
     <div className={`${bg} flex items-center justify-center`}>
-      <div
-        className={`${simonetta.className} text-center flex flex-col gap-y-3`}
-      >
-        <span className="text-black text-xl sm:text-2xl md:text-3xl">{value}</span>
+      <div className={`${simonetta.className} text-center flex flex-col gap-y-3`}>
+        <span className="text-black text-[24px] md:text-[32px] xl:text-[40px]">{value}</span>
         <p>
-          <span className="text-black text-base sm:text-xl  md:text-2xl">{label}</span>
+          <span className="text-black text-[16px] sm:text-[24px]  xl:text-[32px]">{label}</span>
         </p>
       </div>
     </div>

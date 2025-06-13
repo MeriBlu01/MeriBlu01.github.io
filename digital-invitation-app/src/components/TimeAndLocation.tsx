@@ -5,29 +5,31 @@ import Image from "next/image";
 
 export default function TimeAndLocation() {
   return (
-    <div id="location" className="w-full h-fit p-5 md:p-20 flex flex-col justify-center items-center gap-y-10">
-      <div className="relative w-1/2 md:w-1/6 aspect-[200/125] flex justify-center items-center">
+    <div id="location" className="w-full p-5 md:p-20 flex flex-col justify-center items-center">
+      <div className="relative w-1/2 md:w-1/6 flex justify-center items-center pb-[8px] sm:pb-[16px] lg:pb-[24px]">
         <Image
           src="/Vectors/Detail-chapel.svg"
           alt="Chapel"
-          fill
-          className="object-contain"
+          width={0}
+          height={0}
+          sizes="100vw"
+          className="min-w-[150px] md:min-w-[225px] lg:min-w-[300px] h-auto "
           priority
         />
       </div>
-      <div className="w-full flex flex-col items-center justify-center text-center gap-y-5">
+      <div className="w-full flex flex-col items-center justify-center text-center gap-[8px] sm:gap-[16px] lg:gap-[24px]">
         <p
-          className={`${simonetta.className} font-normal text-black text-xl md:text-[24px]`}
+          className={`${simonetta.className} font-normal text-black text-center px-[40px] text-[16px] sm:text-[24px] xl:text-[32px]`}
         >
           La ceremonia y recepción se llevarán a cabo en :
         </p>
         <h1
-          className={`${tangerine.className} font-extrabold text-red-brown text-[44px] md:text-[60px]`}
+          className={`${tangerine.className} font-extrabold text-red-brown text-center text-[40px] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[80px]`}
         >
           Hacienda de Negrete
         </h1>
         <p
-          className={`${simonetta.className} font-normal text-black text-xl md:text-[24px]`}
+          className={`${simonetta.className} font-normal text-black text-center px-[40px] text-[16px] sm:text-[24px] xl:text-[32px]`}
         >
           Te esperamos el día:
         </p>
@@ -36,7 +38,9 @@ export default function TimeAndLocation() {
         >
           <span>06 de Diciembre 2025</span>
           <span className="hidden md:block"> - </span>
-          <span className="text-[36px] md:text-[48px]">06:00 p.m.*</span>
+          <span className="text-center text-[32px] sm:text-[40px] xl:text-[56px] ">
+            06:00 p.m.*
+          </span>
         </p>
         <div className="relative w-9/10 md:w-2/5 aspect-[400/300] flex flex-col justify-center items-center">
           <iframe
