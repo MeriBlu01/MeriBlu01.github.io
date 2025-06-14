@@ -1,14 +1,11 @@
 import Image from "next/image";
 
-interface InvitationSectionProps {
+interface BigPictureProps {
   imageSrc: string;
   altText: string;
 }
 
-export default function BigPicture({
-  imageSrc,
-  altText,
-}: InvitationSectionProps) {
+export default function BigPicture({ imageSrc, altText }: BigPictureProps) {
   return (
     <section className="relative w-full h-96 md:h-dvh flex flex-col items-center justify-center">
       <div className="absolute mx-auto top-3 md:top-0 w-3/4 md:w-1/3 h-1/6">

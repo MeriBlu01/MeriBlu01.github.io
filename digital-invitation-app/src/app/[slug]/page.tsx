@@ -1,3 +1,5 @@
+import { getGuestBySlug } from "@/lib/airtable";
+
 import Invitation from "@/components/InvitationTitle";
 import Hero from "@/components/Hero";
 import NavBar from "@/components/NavBar";
@@ -13,7 +15,19 @@ import Form from "@/components/Form";
 import HotelCard from "@/components/Lodgement";
 import GiftsTableCard from "@/components/GiftsTableCard";
 
-export default function Home() {
+interface InvitationPageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function InvitationPage({ params }: InvitationPageProps) {
+  const guest = await getGuestBySlug(params.slug);
+
+  if (!guest) {
+    return <div className="p-6 text-red-600">Invitado no encontrado.</div>;
+  }
+
   return (
     <main className="flex flex-col items-center w-full bg-yellow-1 scroll-smooth">
       {/* Invitation Cover Section */}
@@ -21,7 +35,10 @@ export default function Home() {
       <NavBar />
       {/* We are getting married Section */}
       <section className="flex flex-col justify-center w-full mt-[40px] gap-[24px]">
-        <Invitation name="Nombre de Invitado" maxGuests={1} />
+        <Invitation
+          name={guest?.name || "Querido invitado"}
+          maxGuests={guest?.maxGuests || 1}
+        />
         {/* Save The Date */}
         <section className="w-full h-60 md:h-80 flex justify-center items-center">
           <SaveTheDate />
