@@ -113,7 +113,7 @@ const titleIcons: ScheduleIcon[] = [
 export default function Schedule(): JSX.Element {
   return (
     <section id="itinerary" className=" scroll-mt-[50px] w-full bg-yellow-2 gap-0 ">
-      <div className="w-full flex flex-col justify-center items-center px-[16px]  md:px-[56px] lg:px-[80px] py-[32px]  max-w-[1730px] mx-auto">
+      <div className="w-full flex flex-col justify-center items-center px-[16px] md:px-[56px] lg:px-[80px] py-[32px]  max-w-[1730px] mx-auto">
         <h1
           className={`${tangerine.className} font-extrabold text-center text-yellow-4 text-[40px] sm:text-[48px] md:text-[64px] lg:text-[72px] xl:text-[80px]`}
         >

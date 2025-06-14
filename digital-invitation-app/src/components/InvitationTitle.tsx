@@ -7,7 +7,7 @@ export default function Invitation() {
   return (
     <section
       id="invitation"
-      className=" scroll-mt-[50px] w-full sm:px-[16px] lg:px-[80px] max-w-[1730px] mx-auto"
+      className=" scroll-mt-[50px] w-full px-[16px] md:px-[56px] lg:px-[80px] max-w-[1730px] mx-auto"
     >
       <div className="bg-yellow-2 w-full h-fit flex flex-col justify-center rounded-[16px] lg:p-[42] lg:gap-[16px] invitation-background">
         <div className="w-full lg:px-[80px] flex flex-col justify-center">

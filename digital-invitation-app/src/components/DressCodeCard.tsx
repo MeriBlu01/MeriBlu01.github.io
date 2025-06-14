@@ -27,7 +27,7 @@ export default function DressCode(): JSX.Element {
   return (
     <section
       id="dressCode"
-      className="scroll-mt-[50px] w-full flex flex-col justify-center px-[16px] lg:px-[80px] py-[24px] gap-[32px] max-w-[1730px] mx-auto "
+      className="scroll-mt-[50px] w-full flex flex-col justify-center px-[16px] md:px-[56px] lg:px-[80px] py-[24px] gap-[32px] max-w-[1730px] mx-auto "
     >
       <div className="w-full flex flex-col justify-center gap-0-">
         <h1
@@ -41,7 +41,7 @@ export default function DressCode(): JSX.Element {
           width={0}
           height={0}
           sizes="100vw"
-          className=" h-auto mx-auto w-[250px] md:w-[400px] lg:w-[500px] "
+          className=" mx-auto w-[300px] h-[60px]  md:w-[500px] md:h-[100px] "
         />
       </div>
       <p
