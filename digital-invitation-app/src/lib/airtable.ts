@@ -36,11 +36,10 @@ export async function getGuestBySlug(slug: string) {
       side: record.fields?.["Groom or Bride"] ?? "",
       state: record.fields?.State ?? "",
     };
-  } catch (error: any) {
-    console.error(
-      "Error fetching guest by slug:",
-      error?.response?.data || error.message
-    );
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("Error fetching guest by slug:", error.message);
+    }
     return null;
   }
 }

@@ -7,19 +7,19 @@ interface CountdownTimerProps {
   targetDate: string; // e.g. "2025-12-06T00:00:00"
 }
 
-export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
-  const calculateTimeLeft = () => {
-    const difference = +new Date(targetDate) - +new Date();
-    if (difference <= 0) return null;
+function calculateTimeLeft(targetDate: string) {
+  const difference = +new Date(targetDate) - +new Date();
+  if (difference <= 0) return null;
 
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / (1000 * 60)) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
+  return {
+    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((difference / (1000 * 60)) % 60),
+    seconds: Math.floor((difference / 1000) % 60),
   };
+}
 
+export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState<ReturnType<
     typeof calculateTimeLeft
   > | null>(null);
@@ -28,10 +28,10 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   useEffect(() => {
     setHasMounted(true); // It runs only on client side
-    setTimeLeft(calculateTimeLeft());
+    setTimeLeft(calculateTimeLeft(targetDate));
 
     const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
+      setTimeLeft(calculateTimeLeft(targetDate));
     }, 1000);
 
     return () => clearInterval(timer);

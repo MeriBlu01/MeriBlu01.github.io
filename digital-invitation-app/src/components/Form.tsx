@@ -92,8 +92,12 @@ export default function Form() {
       setAllergy("No");
       setAllergyList("");
       setMessage("");
-    } catch (error: any) {
-      setSubmitError(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setSubmitError(error.message);
+      } else {
+        setSubmitError("Ocurrió un error desconocido.");
+      }
     } finally {
       setIsSubmitting(false);
       setFormErrors([]);

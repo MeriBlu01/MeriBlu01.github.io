@@ -57,12 +57,15 @@ export async function POST(req: NextRequest) {
       { message: "RSVP submitted!", data: response.data },
       { status: 200 }
     );
-  } catch (error: any) {
-    console.error(
-      "Error submitting RSVP:",
-      error instanceof Error ? error.message : error
-    );
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error("Error submitting RSVP:", error.message);
+    } else {
+      console.error("Error submitting RSVP:", error);
+    }
+
     console.error("Error in POST handler:", error);
+
     return NextResponse.json(
       { error: "Something went wrong" },
       { status: 500 }
